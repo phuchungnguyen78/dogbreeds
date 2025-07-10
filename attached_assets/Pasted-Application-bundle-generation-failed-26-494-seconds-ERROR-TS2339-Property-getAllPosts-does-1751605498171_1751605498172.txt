@@ -1,0 +1,142 @@
+Application bundle generation failed. [26.494 seconds]
+✘ [ERROR] TS2339: Property 'getAllPosts' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:59:20:
+      59 │     this.dogService.getAllPosts().subscribe((posts: DogPost[]) => {
+         ╵                     ~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'showMobileMenu' does not exist on type 'HeaderComponent'. [plugin angular-compiler]
+
+    src/app/components/header/header.component.html:60:46:
+      60 │ ...e-overlay" [class.show]="showMobileMenu" (click)="toggleMobileM...
+         ╵                             ~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeaderComponent.
+
+    src/app/components/header/header.component.ts:14:15:
+      14 │   templateUrl: './header.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Unclosed block "" [plugin angular-compiler]
+
+    src/app/components/user-profile/user-profile.component.html:32:30:
+      32 │           <p class="username">@{{ userProfile.username }}</p>
+         ╵                               ~~
+
+  Error occurs in the template of component UserProfileComponent.
+
+    src/app/components/user-profile/user-profile.component.ts:15:15:
+      15 │   templateUrl: './user-profile.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Invalid ICU message. Missing '}'. [plugin angular-compiler]
+
+    src/app/components/user-profile/user-profile.component.html:99:0:
+      99 │ 
+         ╵ ^
+
+  Error occurs in the template of component UserProfileComponent.
+
+    src/app/components/user-profile/user-profile.component.ts:15:15:
+      15 │   templateUrl: './user-profile.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Unexpected character "EOF" (Do you have an unescaped "{" in your template? Use "{{ '{' }}") to escape it.) [plugin angular-compiler]
+
+    src/app/components/user-profile/user-profile.component.html:99:0:
+      99 │ 
+         ╵ ^
+
+  Error occurs in the template of component UserProfileComponent.
+
+    src/app/components/user-profile/user-profile.component.ts:15:15:
+      15 │   templateUrl: './user-profile.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'import("/home/runner/workspace/src/app/services/dog.service").UserProfile' is not assignable to type 'import("/home/runner/workspace/src/app/models/user.model").UserProfile'.
+  Types of property 'role' are incompatible.
+    Type 'string' is not assignable to type '"admin" | "user"'. [plugin angular-compiler]
+
+    src/app/components/user-profile/user-profile.component.ts:45:6:
+      45 │       this.userProfile = profile;
+         ╵       ~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type '{ id: string; username: string; email: string; name: string; bio: string; location: string; website: string; userAvatar: string; dogAvatar: string; dateJoined: Date; role: string; stats: { posts: number; followers: number; following: number; likes: number; }; socialLinks: { ...; }; }' is not assignable to type 'Partial<UserProfile>'.
+  Types of property 'role' are incompatible.
+    Type 'string' is not assignable to type '"admin" | "user" | undefined'. [plugin angular-compiler]
+
+    src/app/components/user-profile/user-profile.component.ts:46:6:
+      46 │       this.editForm = { ...profile };
+         ╵       ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2345: Argument of type 'Partial<import("/home/runner/workspace/src/app/models/user.model").UserProfile>' is not assignable to parameter of type 'Partial<import("/home/runner/workspace/src/app/services/dog.service").UserProfile>'.
+  Types of property 'socialLinks' are incompatible.
+    Type '{ instagram?: string | undefined; twitter?: string | undefined; facebook?: string | undefined; } | undefined' is not assignable to type '{ instagram: string; twitter: string; } | undefined'.
+      Type '{ instagram?: string | undefined; twitter?: string | undefined; facebook?: string | undefined; }' is not assignable to type '{ instagram: string; twitter: string; }'.
+        Types of property 'instagram' are incompatible.
+          Type 'string | undefined' is not assignable to type 'string'.
+            Type 'undefined' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/app/components/user-profile/user-profile.component.ts:65:61:
+      65 │ ...e.updateUserProfile(this.userProfile.id, this.editForm).subscribe(
+         ╵                                             ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'import("/home/runner/workspace/src/app/services/dog.service").UserProfile' is not assignable to type 'import("/home/runner/workspace/src/app/models/user.model").UserProfile'. [plugin angular-compiler]
+
+    src/app/components/user-profile/user-profile.component.ts:67:10:
+      67 │           this.userProfile = updatedProfile;
+         ╵           ~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2739: Type '{ id: string; title: string; content: string; image: string; category: DogCategory.FOOD; author: { id: string; name: string; avatar: string; }; authorName: string; authorAvatar: string; date: Date; ... 5 more ...; status: "approved"; }' is missing the following properties from type 'DogPost': media, views, likedBy, sharedBy, shares [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:56:4:
+      56 │     {
+         ╵     ^
+
+
+✘ [ERROR] TS2739: Type '{ id: string; title: string; content: string; image: string; category: DogCategory.ENVIRONMENT; author: { id: string; name: string; avatar: string; }; authorName: string; authorAvatar: string; date: Date; ... 5 more ...; status: "approved"; }' is missing the following properties from type 'DogPost': media, views, likedBy, sharedBy, shares [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:77:4:
+      77 │     {
+         ╵     ^
+
+
+✘ [ERROR] TS2739: Type '{ id: string; title: string; content: string; image: string; category: DogCategory.TRAINING; author: { id: string; name: string; avatar: string; }; authorName: string; authorAvatar: string; date: Date; ... 5 more ...; status: "approved"; }' is missing the following properties from type 'DogPost': media, views, likedBy, sharedBy, shares [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:98:4:
+      98 │     {
+         ╵     ^
+
+
+✘ [ERROR] TS2322: Type 'Observable<boolean>' is not assignable to type 'Observable<User>'.
+  Type 'boolean' is not assignable to type 'User'. [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:247:6:
+      247 │       return of(true);
+          ╵       ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'Observable<boolean>' is not assignable to type 'Observable<User>'. [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:249:4:
+      249 │     return of(false);
+          ╵     ~~~~~~
+
+
+✘ [ERROR] TS2739: Type '{ id: string; title: any; content: any; image: any; category: DogCategory.TRAINING; author: { id: any; name: string; avatar: string; }; authorName: string; authorAvatar: string; date: Date; ... 5 more ...; status: any; }' is missing the following properties from type 'DogPost': media, views, likedBy, sharedBy, shares [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:337:10:
+      337 │     const newPost: DogPost = {
+          ╵           ~~~~~~~
+
+
+Watch mode enabled. Watching for file changes...

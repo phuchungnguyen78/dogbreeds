@@ -1,0 +1,113 @@
+
+<div class="category-page">
+  <div class="category-header" *ngIf="currentCategory">
+    <div class="category-hero" [class]="'hero-' + currentCategory.toLowerCase()">
+      <div class="hero-content">
+        <h1>{{ currentCategory | titlecase }}</h1>
+        <p>{{ getCategoryDescription(currentCategory) }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Navigation -->
+  <div class="category-nav">
+    <div class="nav-container">
+      <a 
+        *ngFor="let category of categories" 
+        [routerLink]="['/category', category.id]"
+        class="category-link"
+        [class.active]="currentCategory === category.id">
+        <span class="category-icon">{{ category.icon }}</span>
+        <span class="category-name">{{ category.name }}</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Content Sections -->
+  <div class="category-content">
+    
+    <!-- Breeds Section -->
+    <div class="content-section" *ngIf="breeds.length > 0">
+      <h2>Popular {{ currentCategory | titlecase }} Breeds</h2>
+      <div class="breeds-grid">
+        <div *ngFor="let breed of breeds" class="breed-card">
+          <img [src]="breed.image" [alt]="breed.name" class="breed-image">
+          <div class="breed-info">
+            <h3>{{ breed.name }}</h3>
+            <p>{{ breed.description | slice:0:100 }}{{ breed.description.length > 100 ? '...' : '' }}</p>
+            <div class="breed-traits">
+              <span class="trait">
+                <strong>Size:</strong> {{ breed.size }}
+              </span>
+              <span class="trait">
+                <strong>Energy:</strong> {{ breed.energyLevel }}
+              </span>
+              <span class="trait">
+                <strong>Grooming:</strong> {{ breed.groomingNeeds }}
+              </span>
+            </div>
+            <button class="learn-more-btn">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Posts Section -->
+    <div class="content-section" *ngIf="posts.length > 0">
+      <h2>Related Posts</h2>
+      <div class="posts-grid">
+        <article *ngFor="let post of posts" class="post-card">
+          <div class="post-header">
+            <div class="author-info">
+              <img [src]="post.author.avatar" [alt]="post.author.name" class="author-avatar">
+              <div>
+                <h4>{{ post.author.name }}</h4>
+                <time>{{ post.createdAt | date }}</time>
+              </div>
+            </div>
+          </div>
+          <div class="post-content">
+            <h3><a [routerLink]="['/post', post.id]">{{ post.title }}</a></h3>
+            <p>{{ post.content | slice:0:200 }}{{ post.content.length > 200 ? '...' : '' }}</p>
+            <div class="post-tags">
+              <span *ngFor="let tag of post.tags" class="tag">
+                <a [routerLink]="['/hashtag', tag]">#{{ tag }}</a>
+              </span>
+            </div>
+          </div>
+          <div class="post-actions">
+            <span class="likes">❤️ {{ post.likes }}</span>
+            <span class="comments">💬 {{ post.commentsCount || 0 }}</span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Tips Section -->
+    <div class="content-section">
+      <h2>{{ currentCategory | titlecase }} Tips & Guidelines</h2>
+      <div class="tips-grid">
+        <div *ngFor="let tip of getCategoryTips(currentCategory)" class="tip-card">
+          <div class="tip-icon">{{ tip.icon }}</div>
+          <h4>{{ tip.title }}</h4>
+          <p>{{ tip.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resource Links -->
+    <div class="content-section">
+      <h2>Helpful Resources</h2>
+      <div class="resources-grid">
+        <div *ngFor="let resource of getCategoryResources(currentCategory)" class="resource-card">
+          <h4>{{ resource.title }}</h4>
+          <p>{{ resource.description }}</p>
+          <a [href]="resource.url" target="_blank" class="resource-link">
+            Visit Resource →
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,120 @@
+<header class="main-header">
+  <div class="header-container">
+    <!-- Logo -->
+    <div class="logo">
+      <h1><a routerLink="/">🐕 DogBreeds Hub</a></h1>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <div class="nav-links">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a routerLink="/community" routerLinkActive="active">Community</a>
+        <div class="dropdown">
+          <button class="dropdown-btn">Categories</button>
+          <div class="dropdown-content">
+            <a *ngFor="let category of categories" 
+               (click)="onCategorySelect(category.value)"
+               [class.active]="selectedCategory === category.value">
+              {{ category.label }}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <form (ngSubmit)="onSearchSubmit()" class="search-form">
+          <input 
+            type="text" 
+            [(ngModel)]="searchQuery"
+            name="searchQuery"
+            placeholder="Search breeds, posts..."
+            class="search-input">
+          <button type="submit" class="search-btn">🔍</button>
+        </form>
+      </div>
+
+      <!-- User Menu -->
+      <div class="user-menu">
+        <div *ngIf="currentUser; else authButtons" class="user-info">
+          <div class="dropdown">
+            <button class="user-btn">
+              <img [src]="currentUser.avatar" [alt]="currentUser.username" class="user-avatar">
+              {{ currentUser.username }}
+            </button>
+            <div class="dropdown-content">
+              <a routerLink="/profile">Profile</a>
+              <a routerLink="/admin" *ngIf="currentUser.role === 'admin'">Admin</a>
+              <button (click)="logout()">Logout</button>
+            </div>
+          </div>
+        </div>
+        <ng-template #authButtons>
+          <button class="auth-btn login-btn" (click)="openAuthModal('login')">Login</button>
+          <button class="auth-btn register-btn" (click)="openAuthModal('register')">Register</button>
+        </ng-template>
+      </div>
+    </nav>
+
+    <div class="mobile-overlay" [class.show]="mobileMenuOpen" (click)="toggleMobileMenu()"></div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+      <span [class.active]="isMobileMenuOpen"></span>
+      <span [class.active]="isMobileMenuOpen"></span>
+      <span [class.active]="isMobileMenuOpen"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" [class.open]="isMobileMenuOpen">
+    <div class="mobile-search">
+      <form (ngSubmit)="onSearchSubmit()" class="search-form">
+        <input 
+          type="text" 
+          [(ngModel)]="searchQuery"
+          name="searchQuery"
+          placeholder="Search..."
+          class="search-input">
+        <button type="submit" class="search-btn">🔍</button>
+      </form>
+    </div>
+
+    <div class="mobile-links">
+      <a routerLink="/" (click)="closeMobileMenu()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/all-breeds" (click)="closeMobileMenu()">🐕 All Breeds</a>
+      <a routerLink="/community" (click)="closeMobileMenu()" routerLinkActive="active">Community</a>
+
+      <div class="mobile-categories">
+        <h4>Categories</h4>
+        <a *ngFor="let category of categories" 
+           (click)="onCategorySelect(category.value)"
+           [class.active]="selectedCategory === category.value">
+          {{ category.label }}
+        </a>
+      </div>
+
+      <div class="mobile-auth" *ngIf="!currentUser">
+        <button class="auth-btn login-btn" (click)="openAuthModal('login')">Login</button>
+        <button class="auth-btn register-btn" (click)="openAuthModal('register')">Register</button>
+      </div>
+
+      <div class="mobile-user" *ngIf="currentUser">
+        <div class="user-info">
+          <img [src]="currentUser.avatar" [alt]="currentUser.username" class="user-avatar">
+          <span>{{ currentUser.username }}</span>
+        </div>
+        <a routerLink="/profile" (click)="closeMobileMenu()">Profile</a>
+        <a routerLink="/admin" (click)="closeMobileMenu()" *ngIf="currentUser.role === 'admin'">Admin</a>
+        <button (click)="logout()" class="logout-btn">Logout</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Auth Modal -->
+<app-auth-modal 
+  [isOpen]="isAuthModalOpen"
+  (close)="closeAuthModal()">
+</app-auth-modal>

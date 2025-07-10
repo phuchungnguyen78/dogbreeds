@@ -1,0 +1,16 @@
+
+<div 
+  class="dog-assistant"
+  [class.active]="isActive"
+  [style.left.px]="position.x"
+  [style.top.px]="position.y">
+  🐕
+</div>
+
+<div 
+  class="dog-message" 
+  *ngIf="showMessage"
+  [style.left.px]="position.x + 60"
+  [style.top.px]="position.y - 10">
+  {{ currentMessage }}
+</div>

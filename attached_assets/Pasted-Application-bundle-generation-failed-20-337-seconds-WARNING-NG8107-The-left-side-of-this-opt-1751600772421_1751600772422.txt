@@ -1,0 +1,333 @@
+Application bundle generation failed. [20.337 seconds]
+▲ [WARNING] NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.ts:61:57:
+      61 │                       [disabled]="!newComments[post.id]?.trim()">
+         ╵                                                          ~~~~
+
+
+▲ [WARNING] NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. [plugin angular-compiler]
+
+    src/app/components/post-detail/post-detail.component.ts:70:41:
+      70 │                 [disabled]="!newComment?.trim()">
+         ╵                                          ~~~~
+
+
+✘ [ERROR] NG5002: Unclosed block "" [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:148:17:
+      148 │               <p>@{{ user.username }}</p>
+          ╵                  ~~
+
+
+✘ [ERROR] NG5002: Invalid ICU message. Missing '}'. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:169:2:
+      169 │   `,
+          ╵   ^
+
+
+✘ [ERROR] NG5002: Unexpected character "EOF" (Do you have an unescaped "{" in your template? Use "{{ '{' }}") to escape it.) [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:169:2:
+      169 │   `,
+          ╵   ^
+
+
+✘ [ERROR] TS2551: Property 'currentUser' does not exist on type 'AuthService'. Did you mean 'currentUser$'? [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:470:21:
+      470 │     this.authService.currentUser.subscribe(user => {
+          ╵                      ~~~~~~~~~~~
+
+  'currentUser$' is declared here.
+
+    src/app/services/auth.service.ts:11:9:
+      11 │   public currentUser$ = this.currentUserSubject.asObservable();
+         ╵          ~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7006: Parameter 'user' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:470:43:
+      470 │     this.authService.currentUser.subscribe(user => {
+          ╵                                            ~~~~
+
+
+✘ [ERROR] TS2339: Property 'getAllPosts' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:481:20:
+      481 │     this.dogService.getAllPosts().subscribe(posts => {
+          ╵                     ~~~~~~~~~~~
+
+
+✘ [ERROR] TS7006: Parameter 'posts' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:481:44:
+      481 │     this.dogService.getAllPosts().subscribe(posts => {
+          ╵                                             ~~~~~
+
+
+✘ [ERROR] TS7006: Parameter 'p' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:483:39:
+      483 │       this.pendingPosts = posts.filter(p => p.status === 'pending');
+          ╵                                        ^
+
+
+✘ [ERROR] TS7006: Parameter 'p' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:484:40:
+      484 │ ... this.approvedPosts = posts.filter(p => p.status === 'approved');
+          ╵                                       ^
+
+
+✘ [ERROR] TS2339: Property 'getAllUsers' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:487:20:
+      487 │     this.dogService.getAllUsers().subscribe(users => {
+          ╵                     ~~~~~~~~~~~
+
+
+✘ [ERROR] TS7006: Parameter 'users' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:487:44:
+      487 │     this.dogService.getAllUsers().subscribe(users => {
+          ╵                                             ~~~~~
+
+
+✘ [ERROR] TS2339: Property 'updatePostStatus' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:498:20:
+      498 │     this.dogService.updatePostStatus(postId, 'approved').subscrib...
+          ╵                     ~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'updatePostStatus' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:504:20:
+      504 │     this.dogService.updatePostStatus(postId, 'rejected').subscrib...
+          ╵                     ~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'createPost' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:523:20:
+      523 │     this.dogService.createPost(postData).subscribe(() => {
+          ╵                     ~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'deletePost' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:537:22:
+      537 │       this.dogService.deletePost(postId).subscribe(() => {
+          ╵                       ~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'role' does not exist on type 'User'. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:544:25:
+      544 │     const newRole = user.role === 'admin' ? 'user' : 'admin';
+          ╵                          ~~~~
+
+
+✘ [ERROR] TS2339: Property 'updateUserRole' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/admin/admin.component.ts:545:20:
+      545 │     this.dogService.updateUserRole(user.id, newRole).subscribe(()...
+          ╵                     ~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'avatar' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/components/category-page/category-page.component.ts:45:42:
+      45 │ ...     <img [src]="post.author.avatar" [alt]="post.author.name" c...
+         ╵                                 ~~~~~~
+
+
+✘ [ERROR] NG9: Property 'name' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/components/category-page/category-page.component.ts:45:69:
+      45 │ ...ost.author.avatar" [alt]="post.author.name" class="author-avatar">
+         ╵                                          ~~~~
+
+
+✘ [ERROR] NG9: Property 'name' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/components/category-page/category-page.component.ts:47:39:
+      47 │                     <h4>{{ post.author.name }}</h4>
+         ╵                                        ~~~~
+
+
+✘ [ERROR] NG9: Property 'createdAt' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/category-page/category-page.component.ts:48:34:
+      48 │                     <time>{{ post.createdAt | date }}</time>
+         ╵                                   ~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'likes' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/category-page/category-page.component.ts:62:47:
+      62 │                 <span class="likes">❤️ {{ post.likes }}</span>
+         ╵                                            ~~~~~
+
+
+✘ [ERROR] NG9: Property 'commentsCount' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/category-page/category-page.component.ts:63:50:
+      63 │ ...  <span class="comments">💬 {{ post.commentsCount || 0 }}</span>
+         ╵                                     ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2345: Argument of type 'string' is not assignable to parameter of type 'DogCategory'. [plugin angular-compiler]
+
+    src/app/components/category-page/category-page.component.ts:354:40:
+      354 │ ...gService.getBreedsByCategory(this.category).subscribe(breeds => {
+          ╵                                 ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2345: Argument of type 'string' is not assignable to parameter of type 'DogCategory'. [plugin angular-compiler]
+
+    src/app/components/category-page/category-page.component.ts:359:39:
+      359 │ ...dogService.getPostsByCategory(this.category).subscribe(posts => {
+          ╵                                  ~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'status' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:97:51:
+      97 │             <div class="post-status" [class]="post.status">
+         ╵                                                    ~~~~~~
+
+
+✘ [ERROR] NG9: Property 'status' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:98:22:
+      98 │               {{ post.status | titlecase }}
+         ╵                       ~~~~~~
+
+
+✘ [ERROR] NG9: Property 'avatar' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:103:40:
+      103 │ ...    <img [src]="post.author.avatar" [alt]="post.author.name" c...
+          ╵                                ~~~~~~
+
+
+✘ [ERROR] NG9: Property 'name' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:103:67:
+      103 │ ...st.author.avatar" [alt]="post.author.name" class="author-avatar">
+          ╵                                         ~~~~
+
+
+✘ [ERROR] NG9: Property 'name' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:105:37:
+      105 │                   <h4>{{ post.author.name }}</h4>
+          ╵                                      ~~~~
+
+
+✘ [ERROR] NG9: Property 'createdAt' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:106:32:
+      106 │                   <time>{{ post.createdAt | date }}</time>
+          ╵                                 ~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'likes' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:125:45:
+      125 │               <span class="likes">❤️ {{ post.likes }}</span>
+          ╵                                          ~~~~~
+
+
+✘ [ERROR] NG9: Property 'commentsCount' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:126:48:
+      126 │ ... <span class="comments">💬 {{ post.commentsCount || 0 }}</span>
+          ╵                                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2551: Property 'currentUser' does not exist on type 'AuthService'. Did you mean 'currentUser$'? [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:396:21:
+      396 │     this.authService.currentUser.subscribe(user => {
+          ╵                      ~~~~~~~~~~~
+
+  'currentUser$' is declared here.
+
+    src/app/services/auth.service.ts:11:9:
+      11 │   public currentUser$ = this.currentUserSubject.asObservable();
+         ╵          ~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7006: Parameter 'user' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:396:43:
+      396 │     this.authService.currentUser.subscribe(user => {
+          ╵                                            ~~~~
+
+
+✘ [ERROR] TS2339: Property 'getCommunityPosts' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:404:20:
+      404 │     this.dogService.getCommunityPosts().subscribe(posts => {
+          ╵                     ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7006: Parameter 'posts' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:404:50:
+      404 │     this.dogService.getCommunityPosts().subscribe(posts => {
+          ╵                                                   ~~~~~
+
+
+✘ [ERROR] TS2339: Property 'status' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:415:67:
+      415 │ ...sts = this.communityPosts.filter(post => post.status === status);
+          ╵                                                  ~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'submitCommunityPost' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:433:20:
+      433 │     this.dogService.submitCommunityPost(postData).subscribe(post ...
+          ╵                     ~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7006: Parameter 'post' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/components/community/community.component.ts:433:60:
+      433 │ ...this.dogService.submitCommunityPost(postData).subscribe(post => {
+          ╵                                                            ~~~~
+
+
+✘ [ERROR] NG9: Property 'avatar' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/components/search-page/search-page.component.ts:42:42:
+      42 │ ...     <img [src]="post.author.avatar" [alt]="post.author.name" c...
+         ╵                                 ~~~~~~
+
+
+✘ [ERROR] NG9: Property 'name' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/components/search-page/search-page.component.ts:42:69:
+      42 │ ...ost.author.avatar" [alt]="post.author.name" class="author-avatar">
+         ╵                                          ~~~~
+
+
+✘ [ERROR] NG9: Property 'name' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/components/search-page/search-page.component.ts:44:39:
+      44 │                     <h4>{{ post.author.name }}</h4>
+         ╵                                        ~~~~
+
+
+✘ [ERROR] NG9: Property 'createdAt' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/search-page/search-page.component.ts:45:34:
+      45 │                     <time>{{ post.createdAt | date }}</time>
+         ╵                                   ~~~~~~~~~

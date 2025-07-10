@@ -1,0 +1,203 @@
+  src/app/components/home/home.component.ts:6:9:
+      6 │ import { LatestPostsComponent } from '../latest-posts/latest-posts....
+        ╵          ~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'traits' does not exist on type 'DogBreed'. [plugin angular-compiler]
+
+    src/app/components/dog-breeds/dog-breeds.component.html:11:61:
+      11 │ ...="trait-tag" *ngFor="let trait of breed.traits">{{ trait }}</span>
+         ╵                                            ~~~~~~
+
+  Error occurs in the template of component DogBreedsComponent.
+
+    src/app/components/dog-breeds/dog-breeds.component.ts:9:15:
+      9 │   templateUrl: './dog-breeds.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'energyLevel' does not exist on type 'DogBreed'. [plugin angular-compiler]
+
+    src/app/components/dog-breeds/dog-breeds.component.html:20:27:
+      20 │             <span>{{ breed.energyLevel }}/5</span>
+         ╵                            ~~~~~~~~~~~
+
+  Error occurs in the template of component DogBreedsComponent.
+
+    src/app/components/dog-breeds/dog-breeds.component.ts:9:15:
+      9 │   templateUrl: './dog-breeds.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'groomingNeeds' does not exist on type 'DogBreed'. [plugin angular-compiler]
+
+    src/app/components/dog-breeds/dog-breeds.component.html:24:27:
+      24 │             <span>{{ breed.groomingNeeds }}/5</span>
+         ╵                            ~~~~~~~~~~~~~
+
+  Error occurs in the template of component DogBreedsComponent.
+
+    src/app/components/dog-breeds/dog-breeds.component.ts:9:15:
+      9 │   templateUrl: './dog-breeds.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'hashtag' does not exist on type 'HashtagPageComponent'. [plugin angular-compiler]
+
+    src/app/components/hashtag-page/hashtag-page.component.html:4:12:
+      4 │     <h1>#{{ hashtag }}</h1>
+        ╵             ~~~~~~~
+
+  Error occurs in the template of component HashtagPageComponent.
+
+    src/app/components/hashtag-page/hashtag-page.component.ts:12:15:
+      12 │   templateUrl: './hashtag-page.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'hashtag' does not exist on type 'HashtagPageComponent'. [plugin angular-compiler]
+
+    src/app/components/hashtag-page/hashtag-page.component.html:5:57:
+      5 │ ...<p class="hashtag-description">Posts tagged with #{{ hashtag }}</p>
+        ╵                                                         ~~~~~~~
+
+  Error occurs in the template of component HashtagPageComponent.
+
+    src/app/components/hashtag-page/hashtag-page.component.ts:12:15:
+      12 │   templateUrl: './hashtag-page.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'authorAvatar' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/hashtag-page/hashtag-page.component.html:16:29:
+      16 │             <img [src]="post.authorAvatar" [alt]="post.authorName"...
+         ╵                              ~~~~~~~~~~~~
+
+  Error occurs in the template of component HashtagPageComponent.
+
+    src/app/components/hashtag-page/hashtag-page.component.ts:12:15:
+      12 │   templateUrl: './hashtag-page.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'authorName' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/hashtag-page/hashtag-page.component.html:16:55:
+      16 │ ..."post.authorAvatar" [alt]="post.authorName" class="author-avatar">
+         ╵                                    ~~~~~~~~~~
+
+  Error occurs in the template of component HashtagPageComponent.
+
+    src/app/components/hashtag-page/hashtag-page.component.ts:12:15:
+      12 │   templateUrl: './hashtag-page.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'authorName' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/hashtag-page/hashtag-page.component.html:18:26:
+      18 │               <h4>{{ post.authorName }}</h4>
+         ╵                           ~~~~~~~~~~
+
+  Error occurs in the template of component HashtagPageComponent.
+
+    src/app/components/hashtag-page/hashtag-page.component.ts:12:15:
+      12 │   templateUrl: './hashtag-page.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'comments' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/hashtag-page/hashtag-page.component.html:47:20:
+      47 │             {{ post.comments || 0 }} comments
+         ╵                     ~~~~~~~~
+
+  Error occurs in the template of component HashtagPageComponent.
+
+    src/app/components/hashtag-page/hashtag-page.component.ts:12:15:
+      12 │   templateUrl: './hashtag-page.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'hashtag' does not exist on type 'HashtagPageComponent'. [plugin angular-compiler]
+
+    src/app/components/hashtag-page/hashtag-page.component.html:56:33:
+      56 │       <h2>No posts found for #{{ hashtag }}</h2>
+         ╵                                  ~~~~~~~
+
+  Error occurs in the template of component HashtagPageComponent.
+
+    src/app/components/hashtag-page/hashtag-page.component.ts:12:15:
+      12 │   templateUrl: './hashtag-page.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'relatedHashtags' does not exist on type 'HashtagPageComponent'. [plugin angular-compiler]
+
+    src/app/components/hashtag-page/hashtag-page.component.html:62:39:
+      62 │   <div class="related-hashtags" *ngIf="relatedHashtags.length > 0">
+         ╵                                        ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HashtagPageComponent.
+
+    src/app/components/hashtag-page/hashtag-page.component.ts:12:15:
+      12 │   templateUrl: './hashtag-page.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'relatedHashtags' does not exist on type 'HashtagPageComponent'. [plugin angular-compiler]
+
+    src/app/components/hashtag-page/hashtag-page.component.html:66:31:
+      66 │         *ngFor="let related of relatedHashtags"
+         ╵                                ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HashtagPageComponent.
+
+    src/app/components/hashtag-page/hashtag-page.component.ts:12:15:
+      12 │   templateUrl: './hashtag-page.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/header/header.component.html:12:52:
+      12 │ ...Active="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+         ╵                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeaderComponent.
+
+    src/app/components/header/header.component.ts:14:15:
+      14 │   templateUrl: './header.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'routerLinkActiveOptions' since it isn't a known property of 'a'. [plugin angular-compiler]
+
+    src/app/components/header/header.component.html:84:78:
+      84 │ ...Active="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+         ╵                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component HeaderComponent.
+
+    src/app/components/header/header.component.ts:14:15:
+      14 │   templateUrl: './header.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2306: File '/home/runner/workspace/src/app/components/latest-posts/latest-posts.component.ts' is not a module. [plugin angular-compiler]
+
+    src/app/components/home/home.component.ts:5:37:
+      5 │ ...testPostsComponent } from '../latest-posts/latest-posts.component';
+        ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS-991010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value is of type '[CommonModule, RouterLink, DogBreedsComponent, (not statically analyzable)]'. [plugin angular-compiler]
+
+    src/app/components/home/home.component.ts:12:11:
+      12 │   imports: [CommonModule, RouterLink, DogBreedsComponent, LatestPo...
+         ╵            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Watch mode enabled. Watching for file changes...

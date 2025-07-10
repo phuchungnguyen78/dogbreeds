@@ -1,0 +1,103 @@
+
+✘ [ERROR] Could not resolve "./components/search-page/search-page.component"
+
+    src/app/app.routes.ts:4:36:
+      4 │ ...eComponent } from './components/search-page/search-page.component';
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./components/community/community.component"
+
+    src/app/app.routes.ts:5:35:
+      5 │ ...unityComponent } from './components/community/community.component';
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./components/admin/admin.component"
+
+    src/app/app.routes.ts:6:31:
+      6 │ import { AdminComponent } from './components/admin/admin.component';
+        ╵                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module './components/search-page/search-page.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/app/app.routes.ts:6:36:
+      6 │ ...eComponent } from './components/search-page/search-page.component';
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module './components/community/community.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/app/app.routes.ts:7:35:
+      7 │ ...unityComponent } from './components/community/community.component';
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./components/category-page/category-page.component"
+
+    src/app/app.routes.ts:7:38:
+      7 │ ...ponent } from './components/category-page/category-page.component';
+        ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module './components/admin/admin.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/app/app.routes.ts:8:31:
+      8 │ import { AdminComponent } from './components/admin/admin.component';
+        ╵                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module './components/category-page/category-page.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/app/app.routes.ts:9:38:
+      9 │ ...ponent } from './components/category-page/category-page.component';
+        ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2551: Property 'getCommentsByPost' does not exist on type 'CommentsService'. Did you mean 'getCommentsByPostId'? [plugin angular-compiler]
+
+    src/app/components/post-detail/post-detail.component.ts:425:25:
+      425 │     this.commentsService.getCommentsByPost(postId).subscribe(comm...
+          ╵                          ~~~~~~~~~~~~~~~~~
+
+  'getCommentsByPostId' is declared here.
+
+    src/app/services/comments.service.ts:40:2:
+      40 │   getCommentsByPostId(postId: string): Observable<Comment[]> {
+         ╵   ~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7006: Parameter 'comments' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/components/post-detail/post-detail.component.ts:425:61:
+      425 │ ...commentsService.getCommentsByPost(postId).subscribe(comments => {
+          ╵                                                        ~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./components/search-page/search-page.component"
+
+    src/app/app.routes.ts:4:36:
+      4 │ ...eComponent } from './components/search-page/search-page.component';
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./components/community/community.component"
+
+    src/app/app.routes.ts:5:35:
+      5 │ ...unityComponent } from './components/community/community.component';
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./components/admin/admin.component"
+
+    src/app/app.routes.ts:6:31:
+      6 │ import { AdminComponent } from './components/admin/admin.component';
+        ╵                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./components/category-page/category-page.component"
+
+    src/app/app.routes.ts:7:38:
+      7 │ ...ponent } from './components/category-page/category-page.component';
+        ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

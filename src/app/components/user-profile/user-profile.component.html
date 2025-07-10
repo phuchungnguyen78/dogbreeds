@@ -1,0 +1,113 @@
+
+<div class="user-profile-page">
+  <div class="profile-header">
+    <div class="profile-hero">
+      <div class="profile-info">
+        <div class="avatar-section">
+          <img [src]="userProfile?.userAvatar" [alt]="userProfile?.name" class="user-avatar">
+          <img [src]="userProfile?.dogAvatar" [alt]="userProfile?.name + ' dog'" class="dog-avatar">
+        </div>
+        
+        <div class="profile-details">
+          <h1>{{ userProfile?.name }}</h1>
+          <p class="username">&#64;{{ userProfile?.username }}</p>
+          <p class="bio">{{ userProfile?.bio }}</p>
+          <p class="location" *ngIf="userProfile?.location">📍 {{ userProfile?.location }}</p>
+          <p class="website" *ngIf="userProfile?.website">
+            <a [href]="userProfile?.website" target="_blank">🌐 {{ userProfile?.website }}</a>
+          </p>
+          <p class="member-since">Member since {{ userProfile?.dateJoined | date }}</p>
+        </div>
+      </div>
+
+      <div class="profile-actions">
+        <button *ngIf="isOwnProfile" class="edit-btn" (click)="toggleEdit()">
+          {{ isEditing ? 'Cancel' : 'Edit Profile' }}
+        </button>
+        <button *ngIf="!isOwnProfile" class="follow-btn" (click)="followUser()">
+          Follow
+        </button>
+      </div>
+    </div>
+
+    <div class="profile-stats">
+      <div class="stat">
+        <strong>{{ userProfile?.stats?.posts || 0 }}</strong>
+        <span>Posts</span>
+      </div>
+      <div class="stat">
+        <strong>{{ userProfile?.stats?.followers || 0 }}</strong>
+        <span>Followers</span>
+      </div>
+      <div class="stat">
+        <strong>{{ userProfile?.stats?.following || 0 }}</strong>
+        <span>Following</span>
+      </div>
+      <div class="stat">
+        <strong>{{ userProfile?.stats?.likes || 0 }}</strong>
+        <span>Likes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Profile Form -->
+  <div *ngIf="isEditing" class="edit-form">
+    <h2>Edit Profile</h2>
+    <form (ngSubmit)="saveProfile()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" [(ngModel)]="editForm.name" name="name">
+      </div>
+      
+      <div class="form-group">
+        <label for="bio">Bio</label>
+        <textarea id="bio" [(ngModel)]="editForm.bio" name="bio"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" [(ngModel)]="editForm.location" name="location">
+      </div>
+      
+      <div class="form-group">
+        <label for="website">Website</label>
+        <input type="url" id="website" [(ngModel)]="editForm.website" name="website">
+      </div>
+      
+      <div class="avatar-uploads">
+        <div class="upload-section">
+          <label>User Avatar</label>
+          <input type="file" (change)="onFileSelect($event, 'user')" accept="image/*">
+        </div>
+        <div class="upload-section">
+          <label>Dog Avatar</label>
+          <input type="file" (change)="onFileSelect($event, 'dog')" accept="image/*">
+        </div>
+      </div>
+      
+      <div class="form-actions">
+        <button type="submit" class="save-btn">Save Changes</button>
+        <button type="button" class="cancel-btn" (click)="toggleEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- User Posts -->
+  <div class="user-posts">
+    <h2>Posts ({{ userPosts?.length || 0 }})</h2>
+    <div class="posts-grid">
+      <div *ngFor="let post of userPosts" class="post-card">
+        <img [src]="post.image" [alt]="post.title" class="post-image">
+        <div class="post-content">
+          <h3><a [routerLink]="['/post', post.id]">{{ post.title }}</a></h3>
+          <p>{{ post.content | slice:0:150 }}...</p>
+          <div class="post-meta">
+            <span class="date">{{ post.date | date }}</span>
+            <span class="likes">❤️ {{ post.likes }}</span>
+            <span class="comments">💬 {{ post.commentsCount }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

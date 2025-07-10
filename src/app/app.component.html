@@ -1,0 +1,16 @@
+
+<app-header 
+  (searchChange)="onSearchChange($event)"
+  (categoryChange)="onCategoryChange($event)">
+</app-header>
+
+<router-outlet></router-outlet>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 Dog Breeds Hub. Made with ❤️ for dog lovers.</p>
+  </div>
+</footer>
+
+<!-- Animated Dog Assistant -->
+<app-dog-assistant></app-dog-assistant>

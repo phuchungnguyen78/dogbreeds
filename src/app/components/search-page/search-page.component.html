@@ -1,0 +1,94 @@
+
+<div class="search-page">
+  <div class="search-header">
+    <h1>Search Results</h1>
+    <div class="search-info" *ngIf="searchQuery">
+      <p>Showing results for: <strong>"{{ searchQuery }}"</strong></p>
+      <span class="results-count">{{ filteredPosts.length }} result(s) found</span>
+    </div>
+  </div>
+
+  <div class="search-filters">
+    <div class="filter-group">
+      <label>Filter by Category:</label>
+      <select [(ngModel)]="selectedCategory" (change)="filterResults()">
+        <option value="">All Categories</option>
+        <option value="breeds">Breeds</option>
+        <option value="food">Food</option>
+        <option value="training">Training</option>
+        <option value="health">Health</option>
+        <option value="grooming">Grooming</option>
+        <option value="environment">Environment</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Sort by:</label>
+      <select [(ngModel)]="sortBy" (change)="sortResults()">
+        <option value="relevance">Relevance</option>
+        <option value="date">Date</option>
+        <option value="likes">Popularity</option>
+        <option value="title">Title</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="search-results" *ngIf="filteredPosts.length > 0; else noResults">
+    <div class="results-grid">
+      <article *ngFor="let post of filteredPosts" class="result-card">
+        <div class="post-header">
+          <div class="author-info">
+            <img [src]="post.author?.avatar" [alt]="post.author?.name" class="author-avatar">
+            <div>
+              <h4>{{ post.author?.name }}</h4>
+              <time>{{ post.createdAt | date }}</time>
+            </div>
+          </div>
+          <span class="category-badge" [class]="'category-' + post.category">
+            {{ post.category | titlecase }}
+          </span>
+        </div>
+
+        <div class="post-content">
+          <h3><a [routerLink]="['/post', post.id]">{{ post.title }}</a></h3>
+          <p>{{ post.content | slice:0:200 }}{{ post.content.length > 200 ? '...' : '' }}</p>
+          
+          <div class="post-tags">
+            <span *ngFor="let tag of post.tags" class="tag">
+              <a [routerLink]="['/hashtag', tag]">#{{ tag }}</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="post-actions">
+          <span class="likes">❤️ {{ post.likes }}</span>
+          <span class="comments">💬 {{ post.commentsCount || 0 }}</span>
+          <a [routerLink]="['/post', post.id]" class="read-more">Read More</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <ng-template #noResults>
+    <div class="no-results">
+      <div class="empty-state">
+        <h3>No Results Found</h3>
+        <p *ngIf="searchQuery">
+          Sorry, we couldn't find any posts matching "<strong>{{ searchQuery }}</strong>".
+        </p>
+        <p *ngIf="!searchQuery">
+          Enter a search term to find posts.
+        </p>
+        <div class="suggestions">
+          <h4>Try searching for:</h4>
+          <div class="suggestion-tags">
+            <a [routerLink]="['/hashtag', 'golden-retriever']" class="suggestion-tag">#golden-retriever</a>
+            <a [routerLink]="['/hashtag', 'training']" class="suggestion-tag">#training</a>
+            <a [routerLink]="['/hashtag', 'nutrition']" class="suggestion-tag">#nutrition</a>
+            <a [routerLink]="['/hashtag', 'health']" class="suggestion-tag">#health</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

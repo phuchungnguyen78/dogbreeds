@@ -1,0 +1,309 @@
+
+<div class="community-page">
+  <div class="community-header">
+    <h1>🐕 Dog Community</h1>
+    <p>Share your dog stories, photos, and videos with fellow dog lovers!</p>
+  </div>
+
+  <!-- Create Post Section -->
+  <div class="create-post-section" *ngIf="currentUser">
+    <button class="create-post-btn" (click)="showCreatePost = !showCreatePost">
+      {{ showCreatePost ? '❌ Cancel' : '✨ Create New Post' }}
+    </button>
+
+    <div class="create-post-form" *ngIf="showCreatePost">
+      <h3>📝 Share with the Community</h3>
+      <form (ngSubmit)="submitPost()">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input 
+            type="text" 
+            id="title" 
+            [(ngModel)]="newPost.title" 
+            name="title"
+            placeholder="Give your post a catchy title..."
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea 
+            id="content" 
+            [(ngModel)]="newPost.content" 
+            name="content"
+            placeholder="Share your story, tips, or ask questions..."
+            rows="5"
+            required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="media">Photos & Videos</label>
+          <input 
+            type="file" 
+            id="media"
+            (change)="onMediaSelect($event)"
+            multiple
+            accept="image/*,video/*"
+            class="media-input">
+          
+          <div class="media-preview" *ngIf="newPost.media.length > 0">
+            <div *ngFor="let media of newPost.media; let i = index" class="media-item">
+              <img *ngIf="media.type === 'image'" [src]="media.url" [alt]="media.caption">
+              <video *ngIf="media.type === 'video'" [src]="media.url" controls></video>
+              <button type="button" class="remove-media" (click)="removeMedia(i)">❌</button>
+              <span class="media-type">{{ getMediaIcon(media.type) }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tags">Tags (comma-separated)</label>
+          <input 
+            type="text" 
+            id="tags" 
+            [(ngModel)]="newPost.tagsString" 
+            name="tags"
+            placeholder="puppy, training, health, breed-specific...">
+        </div>
+
+        <button type="submit" class="submit-btn" [disabled]="!newPost.title || !newPost.content">
+          🚀 Submit Post for Review
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Login Prompt -->
+  <div class="login-prompt" *ngIf="!currentUser">
+    <h2>🔐 Join Our Community</h2>
+    <p>Please log in to share your posts and connect with other dog lovers.</p>
+    <button class="login-btn">Log In</button>
+  </div>
+
+  <!-- Filter Options -->
+  <div class="posts-filter">
+    <button 
+      *ngFor="let status of statusFilters" 
+      class="filter-btn"
+      [class.active]="selectedStatus === status.value"
+      (click)="filterByStatus(status.value)">
+      {{ status.label }}
+    </button>
+  </div>
+
+  <!-- Community Posts -->
+  <div class="posts-grid">
+    <article *ngFor="let post of filteredPosts" class="post-card">
+      <div class="post-status" [class]="post.status">
+        {{ post.status | titlecase }}
+      </div>
+      
+      <div class="post-header">
+        <div class="author-info">
+          <img [src]="post.author.avatar" [alt]="post.author.name" class="author-avatar">
+          <div>
+            <h4><a [routerLink]="['/profile', post.author.id]">{{ post.author.name }}</a></h4>
+            <time>{{ post.createdAt | date:'MMM d, h:mm a' }}</time>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <h3><a [routerLink]="['/post', post.id]">{{ post.title }}</a></h3>
+        <p>{{ post.content | slice:0:200 }}{{ post.content.length > 200 ? '...' : '' }}</p>
+        
+        <!-- Legacy single image support -->
+        <img *ngIf="post.image && post.media.length === 0" 
+             [src]="post.image" 
+             [alt]="post.title" 
+             class="post-image">
+        
+        <!-- New media gallery -->
+        <div class="media-gallery" *ngIf="post.media.length > 0">
+          <div *ngFor="let media of post.media" class="media-item">
+            <img *ngIf="media.type === 'image'" 
+                 [src]="media.url" 
+                 [alt]="media.caption || post.title" 
+                 class="media-content">
+            <video *ngIf="media.type === 'video'" 
+                   [src]="media.url" 
+                   controls 
+                   class="media-content"
+                   (play)="trackVideoView(post)">
+            </video>
+            <div class="media-overlay">
+              <span class="media-type-badge">{{ getMediaIcon(media.type) }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="post-tags">
+          <span *ngFor="let tag of post.tags" class="tag">
+            <a [routerLink]="['/hashtag', tag]">#{{ tag }}</a>
+          </span>
+        </div>
+      </div>
+
+      <div class="post-actions">
+        <div class="action-stats">
+          <button class="action-btn like-btn" 
+                  [class.liked]="isPostLiked(post)"
+                  (click)="likePost(post)">
+            {{ isPostLiked(post) ? '❤️' : '🤍' }} {{ post.likes }}
+          </button>
+          
+          <span class="stat">💬 {{ post.commentsCount || 0 }}</span>
+          <span class="stat">👁️ {{ post.views || 0 }}</span>
+          <span class="stat" *ngIf="post.videoViews">🎥 {{ post.videoViews }}</span>
+          
+          <button class="action-btn share-btn" (click)="sharePost(post)">
+            🔗 {{ post.shares || 0 }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Comments Section -->
+      <div class="comments-section">
+        <h5>💬 Comments</h5>
+        
+        <!-- Add Comment -->
+        <div class="add-comment" *ngIf="currentUser">
+          <img [src]="currentUser.avatar" [alt]="currentUser.name" class="comment-avatar">
+          <div class="comment-input-container">
+            <textarea 
+              [(ngModel)]="newComments[post.id]"
+              placeholder="Write a comment..."
+              class="comment-input"
+              rows="2"></textarea>
+            <button 
+              class="post-comment-btn"
+              (click)="addComment(post.id)"
+              [disabled]="!newComments[post.id] || !newComments[post.id].trim()">
+              Post
+            </button>
+          </div>
+        </div>
+
+        <!-- Comments List -->
+        <div class="comments-list">
+          <div *ngFor="let comment of postComments[post.id]" class="comment-thread">
+            <!-- Level 0 Comment -->
+            <div class="comment" [attr.data-level]="comment.level">
+              <img [src]="comment.userAvatar || '👤'" [alt]="comment.userName" class="comment-avatar">
+              <div class="comment-content">
+                <div class="comment-header">
+                  <span class="comment-author">{{ comment.userName }}</span>
+                  <time class="comment-time">{{ comment.date | date:'MMM d, h:mm a' }}</time>
+                </div>
+                <p class="comment-text">{{ comment.content }}</p>
+                <div class="comment-actions">
+                  <button class="like-btn" 
+                          [class.liked]="isCommentLiked(comment)"
+                          (click)="likeComment(comment)">
+                    {{ isCommentLiked(comment) ? '❤️' : '🤍' }} {{ comment.likes }}
+                  </button>
+                  <button class="reply-btn" 
+                          *ngIf="comment.level < 2"
+                          (click)="toggleReply(comment.id)">
+                    💬 Reply
+                  </button>
+                </div>
+
+                <!-- Reply Form -->
+                <div class="reply-form" *ngIf="replyingTo[comment.id] && currentUser">
+                  <textarea 
+                    [(ngModel)]="replyTexts[comment.id]"
+                    placeholder="Write a reply..."
+                    class="reply-input"
+                    rows="2"></textarea>
+                  <div class="reply-actions">
+                    <button 
+                      class="submit-reply-btn"
+                      (click)="addReply(comment.id, post.id)"
+                      [disabled]="!replyTexts[comment.id] || !replyTexts[comment.id].trim()">
+                      Reply
+                    </button>
+                    <button class="cancel-reply-btn" (click)="toggleReply(comment.id)">
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Level 1 Replies -->
+            <div *ngFor="let reply of comment.replies" class="comment reply-level-1" [attr.data-level]="reply.level">
+              <img [src]="reply.userAvatar || '👤'" [alt]="reply.userName" class="comment-avatar">
+              <div class="comment-content">
+                <div class="comment-header">
+                  <span class="comment-author">{{ reply.userName }}</span>
+                  <time class="comment-time">{{ reply.date | date:'MMM d, h:mm a' }}</time>
+                </div>
+                <p class="comment-text">{{ reply.content }}</p>
+                <div class="comment-actions">
+                  <button class="like-btn" 
+                          [class.liked]="isCommentLiked(reply)"
+                          (click)="likeComment(reply)">
+                    {{ isCommentLiked(reply) ? '❤️' : '🤍' }} {{ reply.likes }}
+                  </button>
+                  <button class="reply-btn" 
+                          *ngIf="reply.level < 2"
+                          (click)="toggleReply(reply.id)">
+                    💬 Reply
+                  </button>
+                </div>
+
+                <!-- Reply Form Level 1 -->
+                <div class="reply-form" *ngIf="replyingTo[reply.id] && currentUser">
+                  <textarea 
+                    [(ngModel)]="replyTexts[reply.id]"
+                    placeholder="Write a reply..."
+                    class="reply-input"
+                    rows="2"></textarea>
+                  <div class="reply-actions">
+                    <button 
+                      class="submit-reply-btn"
+                      (click)="addReply(reply.id, post.id)"
+                      [disabled]="!replyTexts[reply.id] || !replyTexts[reply.id].trim()">
+                      Reply
+                    </button>
+                    <button class="cancel-reply-btn" (click)="toggleReply(reply.id)">
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Level 2 Replies -->
+              <div *ngFor="let subReply of reply.replies" class="comment reply-level-2" [attr.data-level]="subReply.level">
+                <img [src]="subReply.userAvatar || '👤'" [alt]="subReply.userName" class="comment-avatar">
+                <div class="comment-content">
+                  <div class="comment-header">
+                    <span class="comment-author">{{ subReply.userName }}</span>
+                    <time class="comment-time">{{ subReply.date | date:'MMM d, h:mm a' }}</time>
+                  </div>
+                  <p class="comment-text">{{ subReply.content }}</p>
+                  <div class="comment-actions">
+                    <button class="like-btn" 
+                            [class.liked]="isCommentLiked(subReply)"
+                            (click)="likeComment(subReply)">
+                      {{ isCommentLiked(subReply) ? '❤️' : '🤍' }} {{ subReply.likes }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="login-prompt" *ngIf="!currentUser">
+          <p>Please <a href="#" class="login-link">login</a> to add comments.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="no-posts" *ngIf="filteredPosts.length === 0">
+    <p>No posts found with the selected filter.</p>
+  </div>
+</div>

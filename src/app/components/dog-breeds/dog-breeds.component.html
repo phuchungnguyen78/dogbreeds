@@ -1,0 +1,33 @@
+<div class="breeds-section">
+  <h2>Dog Breeds</h2>
+  <div class="breeds-grid">
+    <div class="breed-card" *ngFor="let breed of breeds" [routerLink]="['/breed', breed.id]">
+      <img [src]="breed.image" [alt]="breed.name" class="breed-image">
+      <div class="breed-info">
+        <h3>{{ breed.name }}</h3>
+        <p class="breed-description">{{ breed.description }}</p>
+        <div class="breed-traits">
+          <span class="trait-tag" *ngFor="let trait of breed.temperament">{{ trait }}</span>
+        </div>
+        <div class="breed-stats">
+          <div class="stat">
+            <label>Size:</label>
+            <span>{{ breed.size }}</span>
+          </div>
+          <div class="breed-stat">
+            <span class="stat-label">Energy Level:</span>
+            <span>{{ breed.energyLevel || 3 }}/5</span>
+          </div>
+          <div class="breed-stat">
+            <span class="stat-label">Grooming Needs:</span>
+            <span>{{ breed.groomingNeeds || 3 }}/5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-breeds" *ngIf="breeds.length === 0">
+    <p>No breeds found. Try adjusting your search or filters.</p>
+  </div>
+</div>

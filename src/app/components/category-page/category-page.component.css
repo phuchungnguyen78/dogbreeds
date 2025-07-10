@@ -1,0 +1,385 @@
+
+.category-page {
+  min-height: 100vh;
+}
+
+.category-header {
+  margin-bottom: 2rem;
+}
+
+.category-hero {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-breeds {
+  background-image: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+                   url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-food {
+  background-image: linear-gradient(135deg, rgba(240, 147, 251, 0.8), rgba(245, 87, 108, 0.8)),
+                   url('https://images.unsplash.com/photo-1589924691995-400dc9ecc119');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-training {
+  background-image: linear-gradient(135deg, rgba(67, 233, 123, 0.8), rgba(56, 178, 172, 0.8)),
+                   url('https://images.unsplash.com/photo-1587300003388-59208cc962cb');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-health {
+  background-image: linear-gradient(135deg, rgba(247, 112, 154, 0.8), rgba(255, 154, 158, 0.8)),
+                   url('https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-grooming {
+  background-image: linear-gradient(135deg, rgba(255, 205, 60, 0.8), rgba(255, 158, 68, 0.8)),
+                   url('https://images.unsplash.com/photo-1616190051652-e5f1b17a2f92');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-environment {
+  background-image: linear-gradient(135deg, rgba(79, 172, 254, 0.8), rgba(0, 242, 254, 0.8)),
+                   url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.category-nav {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+}
+
+.category-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #666;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.category-link:hover {
+  background: #f8f9fa;
+  color: #333;
+  transform: translateY(-2px);
+}
+
+.category-link.active {
+  background: #667eea;
+  color: white;
+}
+
+.category-icon {
+  font-size: 2rem;
+}
+
+.category-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.category-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.content-section {
+  margin-bottom: 4rem;
+}
+
+.content-section h2 {
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.breeds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.breed-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.breed-card:hover {
+  transform: translateY(-5px);
+}
+
+.breed-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.breed-info {
+  padding: 1.5rem;
+}
+
+.breed-info h3 {
+  color: #333;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.breed-info p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.breed-traits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.trait {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.learn-more-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.learn-more-btn:hover {
+  background: #5a67d8;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.post-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+}
+
+.post-header {
+  margin-bottom: 1rem;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info h4 {
+  margin: 0;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.author-info time {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.post-content h3 {
+  margin: 0 0 1rem 0;
+}
+
+.post-content h3 a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.post-content h3 a:hover {
+  color: #667eea;
+}
+
+.post-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background: #f0f0f0;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.tag a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.tag:hover {
+  background: #667eea;
+}
+
+.tag:hover a {
+  color: white;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.likes, .comments {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.tips-grid, .resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.tip-card, .resource-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.tip-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.tip-card h4, .resource-card h4 {
+  color: #333;
+  margin: 0 0 1rem 0;
+}
+
+.tip-card p, .resource-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.resource-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+  color: #5a67d8;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .nav-container {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .category-content {
+    padding: 1rem;
+  }
+
+  .breeds-grid, .posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-grid, .resources-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}

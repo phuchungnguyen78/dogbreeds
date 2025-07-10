@@ -1,0 +1,59 @@
+
+<div class="all-breeds-page">
+  <div class="page-header">
+    <h1>🐕 All Dog Breeds</h1>
+    <p>Discover amazing dog breeds with their unique characteristics</p>
+  </div>
+
+  <div class="filters-section">
+    <div class="search-box">
+      <input 
+        type="text" 
+        [(ngModel)]="searchQuery" 
+        (input)="onSearch()"
+        placeholder="🔍 Search breeds..."
+        class="search-input">
+    </div>
+    
+    <div class="filter-controls">
+      <select [(ngModel)]="selectedSize" (change)="onSizeFilter()" class="size-filter">
+        <option value="">📏 All Sizes</option>
+        <option value="Small">🐕‍🦺 Small</option>
+        <option value="Medium">🐕 Medium</option>
+        <option value="Large">🐕‍🦮 Large</option>
+      </select>
+      
+      <button (click)="clearFilters()" class="clear-btn">🗑️ Clear</button>
+    </div>
+  </div>
+
+  <div class="breeds-grid" *ngIf="!loading">
+    <div class="breed-card" *ngFor="let breed of filteredBreeds" [routerLink]="['/breed', breed.id]">
+      <div class="breed-avatar">
+        <img [src]="breed.image" [alt]="breed.name" class="breed-image">
+        <div class="size-indicator">{{ breed.size.charAt(0) }}</div>
+      </div>
+      <div class="breed-info">
+        <h3>{{ breed.name }}</h3>
+        <p class="breed-origin">📍 {{ breed.origin }}</p>
+        <div class="breed-stats">
+          <span class="stat">⚡ {{ breed.energyLevel }}/5</span>
+          <span class="stat">✂️ {{ breed.groomingNeeds }}/5</span>
+        </div>
+        <div class="breed-traits">
+          <span class="trait" *ngFor="let trait of breed.temperament.slice(0, 2)">{{ trait }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="loading">
+    <p>🐕 Loading amazing breeds...</p>
+  </div>
+
+  <div class="no-results" *ngIf="!loading && filteredBreeds.length === 0">
+    <h3>🚫 No breeds found</h3>
+    <p>Try adjusting your search or filters</p>
+    <button (click)="clearFilters()" class="clear-btn">🔄 Show All Breeds</button>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+
+<div class="breed-detail" *ngIf="!loading && breed">
+  <div class="breed-header">
+    <div class="breed-image-container">
+      <img [src]="breed.image" [alt]="breed.name" class="breed-hero-image">
+      <div class="breed-badge">
+        <span class="size-badge">{{ breed.size }}</span>
+      </div>
+    </div>
+    <div class="breed-info">
+      <h1>{{ breed.name }} 🐕</h1>
+      <p class="breed-origin">📍 Origin: {{ breed.origin }}</p>
+      <p class="breed-description">{{ breed.description }}</p>
+    </div>
+  </div>
+
+  <div class="breed-details">
+    <div class="detail-section">
+      <h3>🎯 Temperament</h3>
+      <div class="trait-tags">
+        <span class="trait-tag" *ngFor="let trait of breed.temperament">{{ trait }}</span>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>✨ Key Traits</h3>
+      <div class="trait-tags">
+        <span class="trait-tag secondary" *ngFor="let trait of breed.traits">{{ trait }}</span>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h4>📏 Size</h4>
+        <p>{{ breed.size }}</p>
+      </div>
+      <div class="stat-card">
+        <h4>⏰ Life Span</h4>
+        <p>{{ breed.lifeSpan }}</p>
+      </div>
+      <div class="stat-card">
+        <h4>⚡ Energy Level</h4>
+        <div class="rating">
+          <span *ngFor="let i of [1,2,3,4,5]" 
+                [class.active]="i <= breed.energyLevel">⭐</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <h4>✂️ Grooming Needs</h4>
+        <div class="rating">
+          <span *ngFor="let i of [1,2,3,4,5]" 
+                [class.active]="i <= breed.groomingNeeds">🔧</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-section">
+    <a routerLink="/all-breeds" class="back-btn">🔙 Back to All Breeds</a>
+  </div>
+</div>
+
+<div class="loading" *ngIf="loading">
+  <p>🐕 Loading breed details...</p>
+</div>
+
+<div class="not-found" *ngIf="!loading && !breed">
+  <h2>🚫 Breed Not Found</h2>
+  <p>Sorry, we couldn't find that breed.</p>
+  <a routerLink="/all-breeds" class="back-btn">🔙 Back to All Breeds</a>
+</div>

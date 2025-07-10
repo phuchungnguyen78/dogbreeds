@@ -1,0 +1,283 @@
+
+.post-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.post-article {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.post-header {
+  padding: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.post-title {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  color: #333;
+  line-height: 1.2;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.author {
+  font-weight: 600;
+}
+
+.category-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.category-breeds { background: #667eea; }
+.category-food { background: #f093fb; }
+.category-environment { background: #4facfe; }
+.category-training { background: #43e97b; }
+.category-health { background: #fa709a; }
+.category-grooming { background: #ffcd3c; }
+
+.post-image-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 2rem;
+}
+
+.post-body {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.tags-label {
+  font-weight: 600;
+  color: #666;
+}
+
+.tag-link {
+  background: #f0f0f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #667eea;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.tag-link:hover {
+  background: #667eea;
+  color: white;
+}
+
+.comments-section {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.comments-section h3 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+}
+
+.add-comment {
+  margin-bottom: 2rem;
+}
+
+.comment-form {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.input-container {
+  flex: 1;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.comment-btn {
+  padding: 0.75rem 1.5rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity 0.3s;
+}
+
+.comment-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-prompt {
+  text-align: center;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.login-link {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.comments-list {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.comment {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.comment:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: #333;
+}
+
+.comment-date {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.comment-text {
+  margin: 0 0 0.5rem 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #888;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.like-btn:hover {
+  background: #f0f0f0;
+}
+
+.like-btn.liked {
+  color: #667eea;
+  background: #f0f0ff;
+}
+
+@media (max-width: 768px) {
+  .post-detail-container {
+    padding: 1rem;
+  }
+
+  .post-title {
+    font-size: 2rem;
+  }
+
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

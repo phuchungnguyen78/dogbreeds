@@ -1,0 +1,174 @@
+
+.breed-detail {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.breed-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.breed-image-container {
+  position: relative;
+}
+
+.breed-hero-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.breed-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.size-badge {
+  background: #667eea;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.breed-info h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.breed-origin {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.breed-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.breed-details {
+  display: grid;
+  gap: 2rem;
+}
+
+.detail-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.trait-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.trait-tag {
+  background: #f0f8ff;
+  color: #667eea;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  border: 2px solid #667eea;
+  font-weight: 500;
+}
+
+.trait-tag.secondary {
+  background: #fff5f5;
+  color: #e53e3e;
+  border-color: #e53e3e;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stat-card h4 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.rating {
+  font-size: 1.2rem;
+}
+
+.rating span {
+  opacity: 0.3;
+  margin: 0 0.1rem;
+}
+
+.rating span.active {
+  opacity: 1;
+}
+
+.back-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.back-btn {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #5a6fd8;
+  transform: translateY(-2px);
+}
+
+.loading, .not-found {
+  text-align: center;
+  padding: 3rem;
+}
+
+.not-found h2 {
+  color: #e53e3e;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .breed-detail {
+    padding: 1rem;
+  }
+
+  .breed-header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .breed-info h1 {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

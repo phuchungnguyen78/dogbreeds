@@ -1,0 +1,89 @@
+
+<div class="post-detail-container" *ngIf="post">
+  <article class="post-article">
+    <div class="post-header">
+      <h1 class="post-title">{{ post.title }}</h1>
+      <div class="post-meta">
+        <span class="author">By {{ post.author }}</span>
+        <span class="date">{{ post.date | date:'fullDate' }}</span>
+        <span class="category-badge" [class]="'category-' + post.category">
+          {{ post.category | titlecase }}
+        </span>
+      </div>
+    </div>
+
+    <div class="post-image-container">
+      <img [src]="post.image" [alt]="post.title" class="post-image">
+    </div>
+
+    <div class="post-content">
+      <div class="post-body">
+        {{ post.content }}
+      </div>
+
+      <div class="post-tags">
+        <span class="tags-label">Tags:</span>
+        <a 
+          *ngFor="let tag of post.tags" 
+          [routerLink]="['/hashtag', tag]"
+          class="tag-link">
+          #{{ tag }}
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Comments Section -->
+  <div class="comments-section">
+    <h3>Comments ({{ comments.length }})</h3>
+
+    <div class="add-comment" *ngIf="currentUser">
+      <div class="comment-form">
+        <div class="user-avatar">
+          {{ currentUser.avatar || '👤' }}
+        </div>
+        <div class="input-container">
+          <textarea 
+            [(ngModel)]="newComment"
+            placeholder="Write a comment..."
+            class="comment-input"
+            rows="3">
+          </textarea>
+          <button 
+            (click)="addComment()"
+            class="comment-btn"
+            [disabled]="!newComment || !newComment.trim()">
+            Post Comment
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-prompt" *ngIf="!currentUser">
+      <p>Please <a href="#" class="login-link">login</a> to leave a comment.</p>
+    </div>
+
+    <div class="comments-list">
+      <div *ngFor="let comment of comments" class="comment">
+        <div class="comment-avatar">
+          {{ comment.userAvatar || '👤' }}
+        </div>
+        <div class="comment-content">
+          <div class="comment-header">
+            <span class="comment-author">{{ comment.userName }}</span>
+            <span class="comment-date">{{ comment.date | date:'short' }}</span>
+          </div>
+          <p class="comment-text">{{ comment.content }}</p>
+          <div class="comment-actions">
+            <button 
+              (click)="likeComment(comment.id)"
+              class="like-btn"
+              [class.liked]="hasLikedComment(comment.id)">
+              👍 {{ comment.likes }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

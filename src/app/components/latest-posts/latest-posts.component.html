@@ -1,0 +1,107 @@
+
+<div class="latest-posts">
+  <div class="posts-grid" *ngIf="posts.length > 0; else noPosts">
+    <article class="post-card" *ngFor="let post of posts; trackBy: trackByPostId">
+      <div class="post-header">
+        <div class="author-info">
+          <img [src]="post.authorAvatar" [alt]="post.authorName" class="author-avatar">
+          <div class="author-details">
+            <h4>{{ post.authorName }}</h4>
+            <span class="post-date">{{ post.createdAt | date:'short' }}</span>
+          </div>
+        </div>
+        <span class="status-badge" [class]="post.status">{{ post.status }}</span>
+      </div>
+
+      <div class="post-content">
+        <h3><a [routerLink]="['/post', post.id]">{{ post.title }}</a></h3>
+        <p class="post-excerpt">{{ post.content | slice:0:200 }}{{ post.content.length > 200 ? '...' : '' }}</p>
+        
+        <img *ngIf="post.image" [src]="post.image" [alt]="post.title" class="post-image">
+        
+        <div class="post-tags" *ngIf="post.tags.length > 0">
+          <span 
+            class="tag" 
+            *ngFor="let tag of post.tags"
+            [routerLink]="['/hashtag', tag]">
+            #{{ tag }}
+          </span>
+        </div>
+      </div>
+
+      <div class="post-footer">
+        <div class="post-stats">
+          <span class="stat">
+            <i class="icon-like">👍</i>
+            {{ post.likes || 0 }}
+          </span>
+          <span class="stat">
+            <i class="icon-comment">💬</i>
+            {{ getCommentsCount(post.id) }}
+          </span>
+          <span class="stat">
+            <i class="icon-view">👀</i>
+            {{ post.views || 0 }}
+          </span>
+        </div>
+        
+        <div class="post-actions">
+          <button class="action-btn" [routerLink]="['/post', post.id]">
+            Read More
+          </button>
+        </div>
+      </div>
+
+      <!-- Comments Section -->
+      <div class="comments-section" *ngIf="getPostComments(post.id).length > 0">
+        <h5>Recent Comments</h5>
+        <div class="comment" *ngFor="let comment of getPostComments(post.id) | slice:0:2">
+          <div class="comment-header">
+            <img [src]="comment.authorAvatar" [alt]="comment.authorName" class="comment-avatar">
+            <div class="comment-info">
+              <span class="comment-author">{{ comment.authorName }}</span>
+              <span class="comment-date">{{ comment.createdAt | date:'short' }}</span>
+            </div>
+          </div>
+          <p class="comment-content">{{ comment.content }}</p>
+          <div class="comment-actions">
+            <button 
+              class="like-btn" 
+              (click)="likeComment(comment.id)"
+              [class.liked]="hasLikedComment(comment.id)">
+              👍 {{ comment.likes || 0 }}
+            </button>
+          </div>
+        </div>
+        
+        <!-- Add Comment Form -->
+        <div class="add-comment" *ngIf="isAuthenticated">
+          <textarea 
+            [(ngModel)]="newComments[post.id]"
+            placeholder="Add a comment..."
+            class="comment-input"
+            rows="2"></textarea>
+          <button 
+            (click)="addComment(post.id)"
+            class="comment-btn"
+            [disabled]="!newComments[post.id] || !newComments[post.id].trim()">
+            Post Comment
+          </button>
+        </div>
+        
+        <div class="login-prompt" *ngIf="!isAuthenticated">
+          <p>Please <a href="#" (click)="showLogin()">login</a> to add comments.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <ng-template #noPosts>
+    <div class="no-posts">
+      <div class="no-posts-icon">📝</div>
+      <h3>No posts yet</h3>
+      <p>Be the first to share something with the community!</p>
+      <a routerLink="/community" class="create-post-btn">Create Post</a>
+    </div>
+  </ng-template>
+</div>

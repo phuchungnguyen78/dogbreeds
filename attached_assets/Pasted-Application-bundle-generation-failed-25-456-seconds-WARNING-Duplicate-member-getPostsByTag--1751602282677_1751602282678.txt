@@ -1,0 +1,410 @@
+Application bundle generation failed. [25.456 seconds]
+▲ [WARNING] Duplicate member "getPostsByTag" in class body [duplicate-class-member]
+
+    src/app/services/dog.service.ts:272:4:
+      272 │     getPostsByTag(tag) {
+          ╵     ~~~~~~~~~~~~~
+
+  The original member "getPostsByTag" is here:
+
+    src/app/services/dog.service.ts:135:4:
+      135 │     getPostsByTag(tag) {
+          ╵     ~~~~~~~~~~~~~
+
+
+▲ [WARNING] Duplicate member "getPostsByTag" in class body [duplicate-class-member]
+
+    src/app/services/dog.service.ts:272:4:
+      272 │     getPostsByTag(tag) {
+          ╵     ~~~~~~~~~~~~~
+
+  The original member "getPostsByTag" is here:
+
+    src/app/services/dog.service.ts:135:4:
+      135 │     getPostsByTag(tag) {
+          ╵     ~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'trackByPostId' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:4:67:
+      4 │ ...ass="post-card" *ngFor="let post of posts; trackBy: trackByPostId">
+        ╵                                                        ~~~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'getCommentsCount' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:40:15:
+      40 │             {{ getCommentsCount(post.id) }}
+         ╵                ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'views' does not exist on type 'DogPost'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:44:20:
+      44 │             {{ post.views || 0 }}
+         ╵                     ~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'getPostComments' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:56:43:
+      56 │ ...ss="comments-section" *ngIf="getPostComments(post.id).length > 0">
+         ╵                                 ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'getPostComments' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:58:52:
+      58 │ ...ent" *ngFor="let comment of getPostComments(post.id) | slice:0:2">
+         ╵                                ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is of type 'unknown'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:60:32:
+      60 │ ...      <img [src]="comment.authorAvatar" [alt]="comment.authorNa...
+         ╵                              ~~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is of type 'unknown'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:60:61:
+      60 │ ...t.authorAvatar" [alt]="comment.authorName" class="comment-avatar">
+         ╵                                   ~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is of type 'unknown'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:62:54:
+      62 │ ...      <span class="comment-author">{{ comment.authorName }}</span>
+         ╵                                                  ~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is of type 'unknown'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:63:52:
+      63 │ ...class="comment-date">{{ comment.createdAt | date:'short' }}</span>
+         ╵                                    ~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is of type 'unknown'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:66:48:
+      66 │           <p class="comment-content">{{ comment.content }}</p>
+         ╵                                                 ~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'likeComment' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:70:23:
+      70 │               (click)="likeComment(comment.id)"
+         ╵                        ~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is of type 'unknown'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:70:43:
+      70 │               (click)="likeComment(comment.id)"
+         ╵                                            ~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'hasLikedComment' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:71:29:
+      71 │               [class.liked]="hasLikedComment(comment.id)">
+         ╵                              ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is of type 'unknown'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:71:53:
+      71 │               [class.liked]="hasLikedComment(comment.id)">
+         ╵                                                      ~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is of type 'unknown'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:72:28:
+      72 │               👍 {{ comment.likes || 0 }}
+         ╵                          ~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'isAuthenticated' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:78:40:
+      78 │         <div class="add-comment" *ngIf="isAuthenticated">
+         ╵                                         ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'textarea'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:80:12:
+      80 │             [(ngModel)]="newComments[post.id]"
+         ╵             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'newComments' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:80:25:
+      80 │             [(ngModel)]="newComments[post.id]"
+         ╵                          ~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'newComments' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:80:25:
+      80 │             [(ngModel)]="newComments[post.id]"
+         ╵                          ~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'addComment' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:85:21:
+      85 │             (click)="addComment(post.id)"
+         ╵                      ~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'newComments' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:87:25:
+      87 │             [disabled]="!newComments[post.id] || !newComments[post...
+         ╵                          ~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'newComments' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:87:50:
+      87 │ ...disabled]="!newComments[post.id] || !newComments[post.id].trim()">
+         ╵                                         ~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'isAuthenticated' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:92:42:
+      92 │         <div class="login-prompt" *ngIf="!isAuthenticated">
+         ╵                                           ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'showLogin' does not exist on type 'LatestPostsComponent'. [plugin angular-compiler]
+
+    src/app/components/latest-posts/latest-posts.component.html:93:41:
+      93 │ ...lease <a href="#" (click)="showLogin()">login</a> to add commen...
+         ╵                               ~~~~~~~~~
+
+  Error occurs in the template of component LatestPostsComponent.
+
+    src/app/components/latest-posts/latest-posts.component.ts:10:15:
+      10 │   templateUrl: './latest-posts.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2739: Type '{ id: string; name: string; image: string; description: string; category: DogCategory.BREEDS; temperament: string[]; size: "Large"; lifeSpan: string; origin: string; }' is missing the following properties from type 'DogBreed': traits, energyLevel, groomingNeeds [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:11:4:
+      11 │     {
+         ╵     ^
+
+
+✘ [ERROR] TS2739: Type '{ id: string; name: string; image: string; description: string; category: DogCategory.BREEDS; temperament: string[]; size: "Large"; lifeSpan: string; origin: string; }' is missing the following properties from type 'DogBreed': traits, energyLevel, groomingNeeds [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:22:4:
+      22 │     {
+         ╵     ^
+
+
+✘ [ERROR] TS2739: Type '{ id: string; name: string; image: string; description: string; category: DogCategory.BREEDS; temperament: string[]; size: "Small"; lifeSpan: string; origin: string; }' is missing the following properties from type 'DogBreed': traits, energyLevel, groomingNeeds [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:33:4:
+      33 │     {
+         ╵     ^
+
+
+✘ [ERROR] TS2739: Type '{ id: string; title: string; content: string; image: string; category: DogCategory.FOOD; author: { id: string; name: string; avatar: string; }; date: Date; createdAt: Date; tags: string[]; likes: number; commentsCount: number; status: "approved"; }' is missing the following properties from type 'DogPost': authorName, authorAvatar, comments [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:47:4:
+      47 │     {
+         ╵     ^
+
+
+✘ [ERROR] TS2739: Type '{ id: string; title: string; content: string; image: string; category: DogCategory.ENVIRONMENT; author: { id: string; name: string; avatar: string; }; date: Date; createdAt: Date; tags: string[]; likes: number; commentsCount: number; status: "approved"; }' is missing the following properties from type 'DogPost': authorName, authorAvatar, comments [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:65:4:
+      65 │     {
+         ╵     ^
+
+
+✘ [ERROR] TS2739: Type '{ id: string; title: string; content: string; image: string; category: DogCategory.TRAINING; author: { id: string; name: string; avatar: string; }; date: Date; createdAt: Date; tags: string[]; likes: number; commentsCount: number; status: "approved"; }' is missing the following properties from type 'DogPost': authorName, authorAvatar, comments [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:83:4:
+      83 │     {
+         ╵     ^
+
+
+✘ [ERROR] TS2393: Duplicate function implementation. [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:150:2:
+      150 │   getPostsByTag(tag: string): Observable<DogPost[]> {
+          ╵   ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2739: Type '{ id: string; title: any; content: any; image: any; category: DogCategory.TRAINING; author: { id: any; name: string; avatar: string; }; date: Date; createdAt: Date; tags: any; likes: number; commentsCount: number; status: any; }' is missing the following properties from type 'DogPost': authorName, authorAvatar, comments [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:186:10:
+      186 │     const newPost: DogPost = {
+          ╵           ~~~~~~~
+
+
+✘ [ERROR] TS2739: Type '{ id: string; title: any; content: any; image: any; category: DogCategory.TRAINING; author: { id: any; name: string; avatar: string; }; date: Date; createdAt: Date; tags: any; likes: number; commentsCount: number; status: any; }' is missing the following properties from type 'DogPost': authorName, authorAvatar, comments [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:232:10:
+      232 │     const newPost: DogPost = {
+          ╵           ~~~~~~~
+
+
+✘ [ERROR] TS2393: Duplicate function implementation. [plugin angular-compiler]
+
+    src/app/services/dog.service.ts:305:2:
+      305 │   getPostsByTag(tag: string): Observable<DogPost[]> {
+          ╵   ~~~~~~~~~~~~~
+
+
+Watch mode enabled. Watching for file changes...

@@ -1,0 +1,154 @@
+
+<div class="admin-page" *ngIf="isAdmin; else notAuthorized">
+  <div class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <p>Manage posts, users, and community content</p>
+  </div>
+
+  <!-- Stats Dashboard -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>{{ pendingPosts.length }}</h3>
+      <p>Pending Posts</p>
+    </div>
+    <div class="stat-card">
+      <h3>{{ approvedPosts.length }}</h3>
+      <p>Approved Posts</p>
+    </div>
+    <div class="stat-card">
+      <h3>{{ totalUsers }}</h3>
+      <p>Total Users</p>
+    </div>
+    <div class="stat-card">
+      <h3>{{ totalPosts.length }}</h3>
+      <p>Total Posts</p>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="admin-tabs">
+    <button 
+      *ngFor="let tab of tabs" 
+      class="tab-btn"
+      [class.active]="activeTab === tab.id"
+      (click)="setActiveTab(tab.id)">
+      {{ tab.label }}
+      <span *ngIf="tab.id === 'pending'" class="badge">{{ pendingPosts.length }}</span>
+    </button>
+  </div>
+
+  <!-- Pending Posts -->
+  <div class="tab-content" *ngIf="activeTab === 'pending'">
+    <h2>Posts Pending Review</h2>
+    <div class="posts-grid" *ngIf="pendingPosts.length > 0; else noPendingPosts">
+      <div *ngFor="let post of pendingPosts" class="admin-post-card">
+        <div class="post-info">
+          <div class="author-info">
+            <img [src]="post.author.avatar" [alt]="post.author.name" class="author-avatar">
+            <div>
+              <h4>{{ post.author.name }}</h4>
+              <time>{{ post.createdAt | date }}</time>
+            </div>
+          </div>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.content | slice:0:200 }}{{ post.content.length > 200 ? '...' : '' }}</p>
+          <div class="post-tags">
+            <span *ngFor="let tag of post.tags" class="tag">#{{ tag }}</span>
+          </div>
+        </div>
+        <div class="post-actions">
+          <button class="approve-btn" (click)="approvePost(post.id)">Approve</button>
+          <button class="reject-btn" (click)="rejectPost(post.id)">Reject</button>
+          <button class="view-btn">
+            <a [routerLink]="['/post', post.id]">View Full</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <ng-template #noPendingPosts>
+      <div class="no-content">
+        <p>No posts pending review.</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- All Posts Management -->
+  <div class="tab-content" *ngIf="activeTab === 'posts'">
+    <div class="section-header">
+      <h2>All Posts Management</h2>
+      <button class="add-btn" (click)="showCreatePost = !showCreatePost">
+        {{ showCreatePost ? 'Cancel' : 'Create New Post' }}
+      </button>
+    </div>
+
+    <!-- Create New Post Form -->
+    <div class="create-post-form" *ngIf="showCreatePost">
+      <h3>Create New Post</h3>
+      <form (ngSubmit)="createNewPost()">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" [(ngModel)]="newPost.title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label>Content</label>
+          <textarea [(ngModel)]="newPost.content" name="content" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Tags (comma-separated)</label>
+          <input type="text" [(ngModel)]="newPost.tagsString" name="tags">
+        </div>
+        <div class="form-group">
+          <label>Image URL</label>
+          <input type="url" [(ngModel)]="newPost.image" name="image">
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="submit-btn">Create Post</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Posts List -->
+    <div class="posts-list">
+      <div *ngFor="let post of totalPosts" class="admin-post-item">
+        <div class="post-summary">
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.author.name }} • {{ post.createdAt | date }}</p>
+          <span class="status-badge" [class]="post.status">{{ post.status }}</span>
+        </div>
+        <div class="post-actions">
+          <button class="edit-btn" (click)="editPost(post)">Edit</button>
+          <button class="delete-btn" (click)="deletePost(post.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Users Management -->
+  <div class="tab-content" *ngIf="activeTab === 'users'">
+    <h2>Users Management</h2>
+    <div class="users-grid">
+      <div *ngFor="let user of users" class="user-card">
+        <img [src]="user.avatar" [alt]="user.username" class="user-avatar">
+        <div class="user-info">
+          <h4>{{ user.name }}</h4>
+          <p>&#64;{{ user.username }}</p>
+          <p>{{ user.email }}</p>
+          <span class="role-badge" [class]="user.role">{{ user.role }}</span>
+        </div>
+        <div class="user-actions">
+          <button class="role-btn" (click)="toggleUserRole(user)">
+            {{ user.role === 'admin' ? 'Remove Admin' : 'Make Admin' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #notAuthorized>
+  <div class="not-authorized">
+    <h1>Access Denied</h1>
+    <p>You don't have permission to access this page.</p>
+    <a routerLink="/">Return to Home</a>
+  </div>
+</ng-template>

@@ -1,0 +1,66 @@
+<div class="home-page">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>🐕 Welcome to DogBreeds Hub</h1>
+      <p class="hero-subtitle">Your ultimate destination for everything about dog breeds, care tips, and community discussions.</p>
+      <div class="hero-actions">
+        <a routerLink="/community" class="cta-btn primary">Join Community</a>
+        <a routerLink="/breeds" class="cta-btn secondary">Explore Breeds</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="floating-emojis">
+        <span class="emoji">🐕</span>
+        <span class="emoji">🐶</span>
+        <span class="emoji">🦴</span>
+        <span class="emoji">🎾</span>
+        <span class="emoji">❤️</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Breeds Section -->
+  <section class="featured-section">
+    <div class="section-header">
+      <h2>🐕 Top Dog Breeds 🎾</h2>
+      <p>Discover popular and unique dog breeds perfect for your lifestyle</p>
+    </div>
+    <app-dog-breeds [breeds]="filteredBreeds"></app-dog-breeds>
+  </section>
+
+  <!-- Latest Posts Section -->
+  <section class="posts-section">
+    <div class="section-header">
+      <h2>Latest Community Posts</h2>
+      <p>See what fellow dog lovers are sharing</p>
+    </div>
+    <app-latest-posts [posts]="filteredPosts"></app-latest-posts>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Breed Search</h3>
+        <p>Find the perfect dog breed that matches your lifestyle and preferences.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Community</h3>
+        <p>Connect with fellow dog lovers, share experiences, and get advice.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Care Guides</h3>
+        <p>Access comprehensive guides on dog care, training, and health.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>Expert Advice</h3>
+        <p>Get professional advice from veterinarians and dog experts.</p>
+      </div>
+    </div>
+  </section>
+</div>
