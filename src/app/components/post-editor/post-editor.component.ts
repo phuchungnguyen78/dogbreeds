@@ -317,7 +317,7 @@ export class PostEditorComponent implements OnInit {
   }
 
   insertSymbol() {
-    const symbols = ['©', '®', '™', '€', '£', '¥', '§', '¶', '†', '‡', '•', '…', '‰', '′', '″', '‹', '›', '«', '»', '‚', '"', '"', ''', '''];
+    const symbols = ['©', '®', '™', '€', '£', '¥', '§', '¶', '†', '‡', '•', '…', '‰', '′', '″', '‹', '›', '«', '»', '‚', '"', '"', "'", "'"];
     const symbol = prompt('Choose a symbol:\n' + symbols.join(' '));
     if (symbol && symbols.includes(symbol)) {
       this.insertHTMLAtCursor(symbol);
@@ -437,5 +437,21 @@ export class PostEditorComponent implements OnInit {
     if($event) {
       this.formatText('heading', ($event.target as HTMLSelectElement).value)
     }
+  }
+
+  onBackgroundColourChange($event: any) {
+    if ($event) {
+      this.formatText('background', ($event.target as HTMLInputElement).value);
+    }
+  }
+
+  onTextColourChange($event: any) {
+    if ($event) {
+      this.formatText('color', ($event.target as HTMLInputElement).value);
+    }
+  }
+
+  onTagKeydown($event: any) {
+    this.addTag($event as KeyboardEvent);
   }
 }

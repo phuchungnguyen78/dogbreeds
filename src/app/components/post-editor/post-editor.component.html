@@ -76,8 +76,8 @@
 
           <!-- Colors -->
           <div class="toolbar-group">
-            <input type="color" (change)="formatText('color', ($event.target as HTMLInputElement).value)" class="color-picker" title="Text Color">
-            <input type="color" (change)="formatText('background', ($event.target as HTMLInputElement).value)" class="color-picker" title="Background Color">
+            <input type="color" (change)="onTextColourChange($event)" class="color-picker" title="Text Color">
+            <input type="color" (change)="onBackgroundColourChange($event)" class="color-picker" title="Background Color">
           </div>
 
           <!-- Alignment -->
@@ -314,7 +314,7 @@
             <input 
               type="text" 
               [(ngModel)]="tagInput"
-              (keydown.enter)="addTag($event as KeyboardEvent)"
+              (keydown.enter)="onTagKeydown($event)"
               placeholder="Add tags..."
               class="tag-input">
             <div class="current-tags">
