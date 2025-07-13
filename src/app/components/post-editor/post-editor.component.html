@@ -1,0 +1,411 @@
+
+<div class="post-editor" *ngIf="currentUser">
+  <div class="editor-header">
+    <div class="title-section">
+      <input 
+        type="text" 
+        [(ngModel)]="post.title" 
+        placeholder="Enter post title here"
+        class="post-title-input"
+        [disabled]="isLoading">
+    </div>
+    
+    <div class="editor-actions">
+      <button class="btn btn-secondary" (click)="togglePreview()">
+        {{ showPreview ? 'Edit' : 'Preview' }}
+      </button>
+      <button class="btn btn-outline" (click)="saveDraft()" [disabled]="isLoading">
+        Save Draft
+      </button>
+      <button class="btn btn-primary" (click)="publishPost()" [disabled]="isLoading">
+        {{ isAdmin ? 'Publish' : 'Submit for Review' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="editor-body">
+    <div class="editor-main">
+      <!-- Enhanced WYSIWYG Editor -->
+      <div class="content-section" *ngIf="!showPreview">
+        <div class="advanced-toolbar">
+          <!-- Text Formatting -->
+          <div class="toolbar-group">
+            <button type="button" (click)="formatText('bold')" class="toolbar-btn" title="Bold" [class.active]="editorToolbar.bold">
+              <strong>B</strong>
+            </button>
+            <button type="button" (click)="formatText('italic')" class="toolbar-btn" title="Italic" [class.active]="editorToolbar.italic">
+              <em>I</em>
+            </button>
+            <button type="button" (click)="formatText('underline')" class="toolbar-btn" title="Underline" [class.active]="editorToolbar.underline">
+              <u>U</u>
+            </button>
+            <button type="button" (click)="formatText('strikethrough')" class="toolbar-btn" title="Strikethrough">
+              <s>S</s>
+            </button>
+          </div>
+
+          <!-- Headings -->
+          <div class="toolbar-group">
+            <select (change)="onParagraphChange($event)" class="heading-select">
+              <option value="">Paragraph</option>
+              <option value="h1">Heading 1</option>
+              <option value="h2">Heading 2</option>
+              <option value="h3">Heading 3</option>
+              <option value="h4">Heading 4</option>
+            </select>
+          </div>
+
+          <!-- Font Options -->
+          <div class="toolbar-group">
+            <select [(ngModel)]="editorToolbar.fontFamily" (change)="applyFontFamily()" class="font-select">
+              <option value="Arial">Arial</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Times New Roman">Times</option>
+              <option value="Helvetica">Helvetica</option>
+              <option value="Verdana">Verdana</option>
+            </select>
+            <select [(ngModel)]="editorToolbar.fontSize" (change)="applyFontSize()" class="size-select">
+              <option value="12px">12px</option>
+              <option value="14px">14px</option>
+              <option value="16px">16px</option>
+              <option value="18px">18px</option>
+              <option value="20px">20px</option>
+              <option value="24px">24px</option>
+            </select>
+          </div>
+
+          <!-- Colors -->
+          <div class="toolbar-group">
+            <input type="color" (change)="formatText('color', ($event.target as HTMLInputElement).value)" class="color-picker" title="Text Color">
+            <input type="color" (change)="formatText('background', ($event.target as HTMLInputElement).value)" class="color-picker" title="Background Color">
+          </div>
+
+          <!-- Alignment -->
+          <div class="toolbar-group">
+            <button type="button" (click)="formatText('align', 'left')" class="toolbar-btn" title="Align Left">
+              ⬅️
+            </button>
+            <button type="button" (click)="formatText('align', 'center')" class="toolbar-btn" title="Align Center">
+              ↔️
+            </button>
+            <button type="button" (click)="formatText('align', 'right')" class="toolbar-btn" title="Align Right">
+              ➡️
+            </button>
+            <button type="button" (click)="formatText('align', 'justify')" class="toolbar-btn" title="Justify">
+              📄
+            </button>
+          </div>
+
+          <!-- Lists -->
+          <div class="toolbar-group">
+            <button type="button" (click)="formatText('bulletList')" class="toolbar-btn" title="Bullet List">
+              • 
+            </button>
+            <button type="button" (click)="formatText('numberList')" class="toolbar-btn" title="Numbered List">
+              1.
+            </button>
+            <button type="button" (click)="formatText('checklist')" class="toolbar-btn" title="Checklist">
+              ☑️
+            </button>
+          </div>
+
+          <!-- Insert Elements -->
+          <div class="toolbar-group">
+            <button type="button" (click)="formatText('link')" class="toolbar-btn" title="Insert Link">
+              🔗
+            </button>
+            <button type="button" (click)="insertTable()" class="toolbar-btn" title="Insert Table">
+              📊
+            </button>
+            <button type="button" (click)="formatText('quote')" class="toolbar-btn" title="Quote">
+              💬
+            </button>
+            <button type="button" (click)="formatText('code')" class="toolbar-btn" title="Code Block">
+              &lt;/&gt;
+            </button>
+            <button type="button" (click)="formatText('divider')" class="toolbar-btn" title="Horizontal Line">
+              ➖
+            </button>
+          </div>
+
+          <!-- Media -->
+          <div class="toolbar-group">
+            <label class="toolbar-btn media-btn" title="Insert Image">
+              🖼️ Image
+              <input type="file" accept="image/*" multiple (change)="onFileSelect($event, 'image')" hidden>
+            </label>
+            <label class="toolbar-btn media-btn" title="Insert Video">
+              🎥 Video
+              <input type="file" accept="video/*" multiple (change)="onFileSelect($event, 'video')" hidden>
+            </label>
+            <button type="button" (click)="insertImageFromUrl()" class="toolbar-btn" title="Image from URL">
+              🌐
+            </button>
+            <button type="button" (click)="insertEmbed()" class="toolbar-btn" title="Embed">
+              📺
+            </button>
+          </div>
+
+          <!-- Advanced -->
+          <div class="toolbar-group">
+            <button type="button" (click)="formatText('indent')" class="toolbar-btn" title="Increase Indent">
+              ⏩
+            </button>
+            <button type="button" (click)="formatText('outdent')" class="toolbar-btn" title="Decrease Indent">
+              ⏪
+            </button>
+            <button type="button" (click)="clearFormatting()" class="toolbar-btn" title="Clear Formatting">
+              🧹
+            </button>
+            <button type="button" (click)="insertSymbol()" class="toolbar-btn" title="Special Characters">
+              Ω
+            </button>
+          </div>
+        </div>
+
+        <!-- Rich Text Editor -->
+        <div class="wysiwyg-container">
+          <div 
+            id="rich-editor"
+            class="rich-text-editor"
+            contenteditable="true"
+            [innerHTML]="post.content"
+            (input)="onContentChange($event)"
+            (paste)="onPaste($event)"
+            (keydown)="onKeyDown($event)"
+            [style.font-family]="editorToolbar.fontFamily"
+            [style.font-size]="editorToolbar.fontSize"
+            [attr.data-placeholder]="'Start writing your post...'"
+            [class.empty]="!post.content">
+          </div>
+        </div>
+
+        <!-- Inline Media Gallery -->
+        <div class="inline-media-gallery" *ngIf="post.media && post.media.length > 0">
+          <h4>📎 Attached Media</h4>
+          <div class="media-grid">
+            <div *ngFor="let media of post.media; let i = index" class="media-item" [attr.data-media-id]="media.id">
+              <div class="media-preview">
+                <img *ngIf="media.type === 'image'" [src]="media.url" [alt]="media.caption">
+                <video *ngIf="media.type === 'video'" [src]="media.url" controls muted></video>
+                <div class="media-overlay">
+                  <button type="button" (click)="insertInlineMedia(media)" class="insert-btn" title="Insert into content">
+                    ⬆️
+                  </button>
+                  <button type="button" (click)="editMediaCaption(i)" class="edit-btn" title="Edit caption">
+                    ✏️
+                  </button>
+                  <button type="button" (click)="removeMedia(i)" class="delete-btn" title="Remove">
+                    🗑️
+                  </button>
+                </div>
+              </div>
+              <input 
+                type="text" 
+                [(ngModel)]="media.caption" 
+                placeholder="Add caption..."
+                class="media-caption"
+                (blur)="updateMediaCaption(i)">
+            </div>
+          </div>
+        </div>
+
+        <!-- Character Count -->
+        <div class="editor-stats">
+          <span class="character-count">{{ getCharacterCount() }} characters</span>
+          <span class="word-count">{{ getWordCount() }} words</span>
+          <span class="reading-time">{{ getReadingTime() }} min read</span>
+        </div>
+      </div>
+
+      <!-- Enhanced Preview -->
+      <div class="preview-section" *ngIf="showPreview">
+        <div class="preview-container">
+          <article class="preview-article">
+            <header class="preview-header">
+              <h1 class="preview-title">{{ post.title || 'Post Title' }}</h1>
+              <div class="preview-meta">
+                <div class="author-info">
+                  <img [src]="currentUser?.avatar || '👤'" class="author-avatar" [alt]="currentUser?.name">
+                  <div class="author-details">
+                    <span class="author-name">{{ currentUser?.name }}</span>
+                    <span class="publish-date">{{ currentDate | date:'medium' }}</span>
+                  </div>
+                </div>
+                <div class="post-stats">
+                  <span class="category-badge" *ngIf="selectedCategory">{{ getCategoryName(selectedCategory) }}</span>
+                </div>
+              </div>
+            </header>
+            
+            <div class="preview-content" [innerHTML]="getFormattedContent()"></div>
+            
+            <footer class="preview-footer" *ngIf="getTags().length > 0">
+              <div class="tag-list">
+                <span *ngFor="let tag of getTags()" class="tag">#{{ tag }}</span>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced Sidebar -->
+    <div class="editor-sidebar">
+      <!-- Publish Settings -->
+      <div class="sidebar-box">
+        <h3>📝 Publish Settings</h3>
+        <div class="publish-options">
+          <div class="form-group">
+            <label>Status:</label>
+            <select [(ngModel)]="post.status" class="form-control">
+              <option value="draft">📄 Draft</option>
+              <option value="pending" *ngIf="!isAdmin">⏳ Pending Review</option>
+              <option value="approved" *ngIf="isAdmin">✅ Published</option>
+              <option value="rejected" *ngIf="isAdmin">❌ Rejected</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Visibility:</label>
+            <select [(ngModel)]="post.visibility" class="form-control">
+              <option value="public">🌍 Public</option>
+              <option value="private">🔒 Private</option>
+              <option value="unlisted">👁️ Unlisted</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Schedule:</label>
+            <input type="datetime-local" [(ngModel)]="post.scheduledDate" class="form-control">
+          </div>
+        </div>
+
+        <div class="publish-actions">
+          <button type="button" (click)="cancel()" class="btn btn-outline btn-sm">
+            Cancel
+          </button>
+          <button 
+            type="button" 
+            (click)="deletePost()" 
+            *ngIf="mode === 'edit'"
+            class="btn btn-danger btn-sm">
+            Delete
+          </button>
+        </div>
+      </div>
+
+      <!-- Category & Tags -->
+      <div class="sidebar-box">
+        <h3>🏷️ Category & Tags</h3>
+        <div class="form-group">
+          <label>Category:</label>
+          <select [(ngModel)]="selectedCategory" class="form-control">
+            <option value="">Select Category</option>
+            <option *ngFor="let category of categories" [value]="category.id">
+              {{ category.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Tags:</label>
+          <div class="tag-input-container">
+            <input 
+              type="text" 
+              [(ngModel)]="tagInput"
+              (keydown.enter)="addTag($event as KeyboardEvent)"
+              placeholder="Add tags..."
+              class="tag-input">
+            <div class="current-tags">
+              <span *ngFor="let tag of getTags(); let i = index" class="tag-chip">
+                #{{ tag }}
+                <button type="button" (click)="removeTag(i)" class="tag-remove">×</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEO Settings -->
+      <div class="sidebar-box">
+        <h3>🔍 SEO Settings</h3>
+        <div class="form-group">
+          <label>Meta Description:</label>
+          <textarea 
+            [(ngModel)]="post.metaDescription"
+            placeholder="Brief description for search engines..."
+            class="form-control"
+            rows="3"
+            maxlength="160">
+          </textarea>
+          <small>{{ post.metaDescription?.length || 0 }}/160 characters</small>
+        </div>
+
+        <div class="form-group">
+          <label>Focus Keyword:</label>
+          <input 
+            type="text" 
+            [(ngModel)]="post.focusKeyword"
+            placeholder="Main keyword for this post"
+            class="form-control">
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="sidebar-box">
+        <h3>🖼️ Featured Image</h3>
+        <div class="featured-image-section">
+          <div class="current-featured" *ngIf="post.featuredImage">
+            <img [src]="post.featuredImage" alt="Featured image" class="featured-preview">
+            <button type="button" (click)="removeFeaturedImage()" class="remove-featured">Remove</button>
+          </div>
+          <label class="upload-btn" *ngIf="!post.featuredImage">
+            📷 Set Featured Image
+            <input type="file" accept="image/*" (change)="setFeaturedImage($event)" hidden>
+          </label>
+        </div>
+      </div>
+
+      <!-- Post Analytics (for existing posts) -->
+      <div class="sidebar-box" *ngIf="mode === 'edit' && post.analytics">
+        <h3>📊 Analytics</h3>
+        <div class="analytics-stats">
+          <div class="stat-item">
+            <span class="stat-label">Views:</span>
+            <span class="stat-value">{{ post.analytics.views || 0 }}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Likes:</span>
+            <span class="stat-value">{{ post.analytics.likes || 0 }}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Comments:</span>
+            <span class="stat-value">{{ post.analytics.comments || 0 }}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Shares:</span>
+            <span class="stat-value">{{ post.analytics.shares || 0 }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" *ngIf="isLoading">
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>{{ mode === 'edit' ? 'Updating' : 'Saving' }} post...</p>
+    </div>
+  </div>
+</div>
+
+<!-- Access Denied -->
+<div class="access-denied" *ngIf="!currentUser">
+  <div class="access-content">
+    <h2>🔒 Access Denied</h2>
+    <p>You must be logged in to create or edit posts.</p>
+    <button class="btn btn-primary" (click)="openLogin()">Login to Continue</button>
+  </div>
+</div>

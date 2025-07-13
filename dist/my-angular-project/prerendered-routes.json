@@ -1,5 +1,9 @@
 {
   "routes": [
-    "/"
+    "/",
+    "/admin",
+    "/all-breeds",
+    "/community",
+    "/search"
   ]
 }

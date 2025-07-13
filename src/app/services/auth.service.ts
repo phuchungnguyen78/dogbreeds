@@ -1,6 +1,5 @@
-
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { User, AuthResponse, LoginRequest, RegisterRequest } from '../models/user.model';
 
 @Injectable({
@@ -9,7 +8,25 @@ import { User, AuthResponse, LoginRequest, RegisterRequest } from '../models/use
 export class AuthService {
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
-  
+
+  // Sample admin account
+  private sampleAdmin: User = {
+    id: 'admin-001',
+    username: 'admin',
+    name: 'Admin User',
+    email: 'admin@doghub.com',
+    avatar: '👤',
+    role: 'admin',
+    dateJoined: new Date('2024-01-01'),
+    createdAt: new Date(),
+    bio: 'DogHub Administrator',
+    location: 'DogHub HQ',
+    joinDate: new Date('2024-01-01'),
+    postsCount: 0,
+    followersCount: 0,
+    followingCount: 0
+  };
+
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   public isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
 
@@ -47,21 +64,57 @@ export class AuthService {
     }
   }
 
-  login(loginData: LoginRequest): Observable<AuthResponse> {
-    // Mock login - in real app, this would call backend API
-    const user = this.mockUsers.find(u => u.email === loginData.email);
-    
-    if (user && loginData.password === 'password') {
-      const authResponse: AuthResponse = {
-        user,
-        token: 'mock-jwt-token'
-      };
-      
-      this.setCurrentUser(user);
-      return of(authResponse);
-    } else {
-      throw new Error('Invalid credentials');
-    }
+  login(credentials: LoginRequest): Observable<AuthResponse> {
+    // Mock login - replace with real API call
+    return new Observable<AuthResponse>((observer) => {
+      setTimeout(() => {
+        // Check for admin credentials
+        if (credentials.email === 'admin@doghub.com' && credentials.password === 'admin123') {
+          const response: AuthResponse = {
+            user: this.sampleAdmin,
+            token: 'mock-admin-jwt-token',
+            expiresIn: 3600
+          };
+
+          this.currentUserSubject.next(this.sampleAdmin);
+          localStorage.setItem('currentUser', JSON.stringify(this.sampleAdmin));
+          observer.next(response);
+          observer.complete();
+        }
+        // Check for regular user credentials
+        else if (credentials.email === 'test@example.com' && credentials.password === 'password') {
+          const user: User = {
+            id: '1',
+            username: 'testuser',
+            name: 'Test User',
+            email: credentials.email,
+            avatar: '👤',
+            role: 'user',
+            dateJoined: new Date(),
+            createdAt: new Date(),
+            bio: 'Dog lover and enthusiast',
+            location: 'Dog City',
+            joinDate: new Date(),
+            postsCount: 5,
+            followersCount: 42,
+            followingCount: 18
+          };
+
+          const response: AuthResponse = {
+            user,
+            token: 'mock-jwt-token',
+            expiresIn: 3600
+          };
+
+          this.currentUserSubject.next(user);
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          observer.next(response);
+          observer.complete();
+        } else {
+          observer.error(new Error('Invalid credentials'));
+        }
+      }, 1000);
+    });
   }
 
   register(registerData: RegisterRequest): Observable<AuthResponse> {
@@ -77,7 +130,7 @@ export class AuthService {
     };
 
     this.mockUsers.push(newUser);
-    
+
     const authResponse: AuthResponse = {
       user: newUser,
       token: 'mock-jwt-token'

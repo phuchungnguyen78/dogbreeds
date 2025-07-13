@@ -70,4 +70,14 @@ export class AuthModalComponent {
       }
     });
   }
+
+  fillAdminCredentials() {
+    this.loginData.email = 'admin@doghub.com';
+    this.loginData.password = 'admin123';
+  }
+
+  fillUserCredentials() {
+    this.loginData.email = 'test@example.com';
+    this.loginData.password = 'password';
+  }
 }

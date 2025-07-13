@@ -1,24 +1,36 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { CategoryPageComponent } from './components/category-page/category-page.component';
-import { SearchPageComponent } from './components/search-page/search-page.component';
-import { HashtagPageComponent } from './components/hashtag-page/hashtag-page.component';
-import { PostDetailComponent } from './components/post-detail/post-detail.component';
-import { CommunityComponent } from './components/community/community.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { DogBreedsComponent } from './components/dog-breeds/dog-breeds.component';
 import { BreedDetailComponent } from './components/breed-detail/breed-detail.component';
 import { AllBreedsComponent } from './components/all-breeds/all-breeds.component';
+import { CategoryPageComponent } from './components/category-page/category-page.component';
+import { CommunityComponent } from './components/community/community.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { HashtagPageComponent } from './components/hashtag-page/hashtag-page.component';
+import { SearchPageComponent } from './components/search-page/search-page.component';
+import { DogAssistantComponent } from './components/dog-assistant/dog-assistant.component';
+import { PostEditorComponent } from './components/post-editor/post-editor.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'category/:category', component: CategoryPageComponent },
-  { path: 'search', component: SearchPageComponent },
-  { path: 'hashtag/:tag', component: HashtagPageComponent },
-  { path: 'post/:id', component: PostDetailComponent },
-  { path: 'community', component: CommunityComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'breed/:id', component: BreedDetailComponent },
+  { path: 'breeds', component: DogBreedsComponent },
+  { path: 'breed/:name', component: BreedDetailComponent },
   { path: 'all-breeds', component: AllBreedsComponent },
-  { path: 'profile/:id', loadComponent: () => import('./components/user-profile/user-profile.component').then(m => m.UserProfileComponent) },
+  { path: 'category/:category', component: CategoryPageComponent },
+  { path: 'community', component: CommunityComponent },
+  { path: 'post/:id', component: PostDetailComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'admin/dashboard', component: AdminDashboardComponent },
+  { path: 'admin/new-post', component: PostEditorComponent },
+  { path: 'admin/edit-post/:id', component: PostEditorComponent },
+  { path: 'create-post', component: PostEditorComponent },
+  { path: 'edit-post/:id', component: PostEditorComponent },
+  { path: 'profile/:id', component: UserProfileComponent },
+  { path: 'hashtag/:tag', component: HashtagPageComponent },
+  { path: 'search', component: SearchPageComponent },
+  { path: 'assistant', component: DogAssistantComponent },
   { path: '**', redirectTo: '' }
 ];

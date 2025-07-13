@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/environments/environment.ts"],
+  "sourcesContent": ["\nexport const environment = {\n  production: false,\n  database: {\n    host: 'localhost',\n    port: 3306,\n    username: 'dev_user',\n    password: 'dev_password',\n    database: 'my_angular_dev_db',\n    connectionLimit: 10,\n    acquireTimeout: 60000,\n    timeout: 60000\n  },\n  apiUrl: 'http://0.0.0.0:4000/api'\n};\n"],
+  "mappings": ";;;;AACO,IAAM,cAAc;EACzB,YAAY;EACZ,UAAU;IACR,MAAM;IACN,MAAM;IACN,UAAU;IACV,UAAU;IACV,UAAU;IACV,iBAAiB;IACjB,gBAAgB;IAChB,SAAS;;EAEX,QAAQ;;",
+  "names": []
+}

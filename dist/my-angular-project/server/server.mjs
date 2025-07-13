@@ -1,13 +1,16 @@
 import './polyfills.server.mjs';
 import {
   main_server_default
-} from "./chunk-3S2VZNSH.mjs";
+} from "./chunk-NN543TZR.mjs";
 import {
-  APP_BASE_HREF,
   SERVER_CONTEXT,
   renderApplication,
   renderModule
-} from "./chunk-RK3VR2U4.mjs";
+} from "./chunk-CASWMAOW.mjs";
+import "./chunk-7XKT5CNS.mjs";
+import {
+  APP_BASE_HREF
+} from "./chunk-HEBEAKTN.mjs";
 import {
   __async,
   __commonJS,
@@ -36681,34 +36684,66 @@ function isBootstrapFn(value) {
 var import_express = __toESM(require_express2());
 import { fileURLToPath } from "url";
 import { dirname as dirname2, join as join2, resolve as resolve2 } from "path";
-function app() {
-  const server = (0, import_express.default)();
-  const serverDistFolder = dirname2(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve2(serverDistFolder, "../browser");
-  const indexHtml = join2(serverDistFolder, "index.server.html");
-  const commonEngine = new CommonEngine();
-  server.set("view engine", "html");
-  server.set("views", browserDistFolder);
-  server.get("*.*", import_express.default.static(browserDistFolder, {
-    maxAge: "1y"
-  }));
-  server.get("*", (req, res, next) => {
-    const { protocol, originalUrl, baseUrl, headers } = req;
-    commonEngine.render({
-      bootstrap: main_server_default,
-      documentFilePath: indexHtml,
-      url: `${protocol}://${headers.host}${originalUrl}`,
-      publicPath: browserDistFolder,
-      providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }]
-    }).then((html) => res.send(html)).catch((err) => next(err));
+var isDevelopment = process.env["NODE_ENV"] !== "production";
+function getEnvironment() {
+  return __async(this, null, function* () {
+    return isDevelopment ? yield import("./chunk-U5KT7YNU.mjs").then((m) => m.environment) : yield import("./chunk-3WCWWJHK.mjs").then((m) => m.environment);
   });
-  return server;
+}
+function app() {
+  return __async(this, null, function* () {
+    const environment = yield getEnvironment();
+    const server = (0, import_express.default)();
+    const serverDistFolder = dirname2(fileURLToPath(import.meta.url));
+    const browserDistFolder = resolve2(serverDistFolder, "../browser");
+    const indexHtml = join2(serverDistFolder, "index.server.html");
+    const commonEngine = new CommonEngine();
+    server.set("view engine", "html");
+    server.set("views", browserDistFolder);
+    server.get("/api/health", (req, res) => {
+      res.json({
+        status: "OK",
+        environment: environment.production ? "production" : "development",
+        timestamp: (/* @__PURE__ */ new Date()).toISOString()
+      });
+    });
+    server.get("/api/test-db", (req, res) => __async(this, null, function* () {
+      try {
+        res.json({
+          message: "Database configuration ready",
+          config: {
+            host: environment.database.host,
+            port: environment.database.port,
+            database: environment.database.database
+          }
+        });
+      } catch (error) {
+        res.status(500).json({ error: "Database connection failed" });
+      }
+    }));
+    server.get("*.*", import_express.default.static(browserDistFolder, {
+      maxAge: "1y"
+    }));
+    server.get("*", (req, res, next) => {
+      const { protocol, originalUrl, baseUrl, headers } = req;
+      commonEngine.render({
+        bootstrap: main_server_default,
+        documentFilePath: indexHtml,
+        url: `${protocol}://${headers.host}${originalUrl}`,
+        publicPath: browserDistFolder,
+        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }]
+      }).then((html) => res.send(html)).catch((err) => next(err));
+    });
+    return server;
+  });
 }
 function run() {
-  const port = process.env["PORT"] || 4e3;
-  const server = app();
-  server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+  return __async(this, null, function* () {
+    const port = process.env["PORT"] || 4e3;
+    const server = yield app();
+    server.listen(port, () => {
+      console.log(`Node Express server listening on http://localhost:${port}`);
+    });
   });
 }
 run();

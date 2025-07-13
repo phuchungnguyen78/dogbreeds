@@ -249,6 +249,24 @@ export class DogService {
     return of(newPost);
   }
 
+  updatePost(postId: string, postData: any): Observable<DogPost> {
+    const postIndex = this.dogPosts.findIndex(p => p.id === postId);
+    if (postIndex !== -1) {
+      const updatedPost: DogPost = {
+        ...this.dogPosts[postIndex],
+        title: postData.title,
+        content: postData.content,
+        tags: postData.tags || [],
+        media: postData.media || [],
+        category: postData.category || DogCategory.BREEDS,
+        status: postData.status || 'approved'
+      };
+      this.dogPosts[postIndex] = updatedPost;
+      return of(updatedPost);
+    }
+    return of({} as DogPost);
+  }
+
   deletePost(postId: string): Observable<boolean> {
     const postIndex = this.dogPosts.findIndex(p => p.id === postId);
     if (postIndex !== -1) {
@@ -258,13 +276,9 @@ export class DogService {
     return of(false);
   }
 
-  updateUserRole(userId: string, role: string): Observable<User> {
-    const userIndex = this.mockUsers.findIndex(u => u.id === userId);
-    if (userIndex !== -1) {
-      this.mockUsers[userIndex].role = role as 'user' | 'admin';
-      return of(this.mockUsers[userIndex]);
-    }
-    return of(this.mockUsers[0]); // Return default user instead of false
+  updateUserRole(userId: string, newRole: string): Observable<User> {
+    // Mock implementation
+    return of({} as User);
   }
 
   // New methods for enhanced features

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/environments/environment.prod.ts"],
+  "sourcesContent": ["\nexport const environment = {\n  production: true,\n  database: {\n    host: process.env['DB_HOST'] || 'localhost',\n    port: parseInt(process.env['DB_PORT'] || '3306'),\n    username: process.env['DB_USERNAME'] || 'prod_user',\n    password: process.env['DB_PASSWORD'] || 'prod_password',\n    database: process.env['DB_NAME'] || 'my_angular_prod_db',\n    connectionLimit: 20,\n    acquireTimeout: 60000,\n    timeout: 60000\n  },\n  apiUrl: process.env['API_URL'] || 'https://your-app.replit.app/api'\n};\n"],
+  "mappings": ";;;;AACO,IAAM,cAAc;EACzB,YAAY;EACZ,UAAU;IACR,MAAM,QAAQ,IAAI,SAAS,KAAK;IAChC,MAAM,SAAS,QAAQ,IAAI,SAAS,KAAK,MAAM;IAC/C,UAAU,QAAQ,IAAI,aAAa,KAAK;IACxC,UAAU,QAAQ,IAAI,aAAa,KAAK;IACxC,UAAU,QAAQ,IAAI,SAAS,KAAK;IACpC,iBAAiB;IACjB,gBAAgB;IAChB,SAAS;;EAEX,QAAQ,QAAQ,IAAI,SAAS,KAAK;;",
+  "names": []
+}

@@ -1,0 +1,848 @@
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:103:18:
+      103 │             <span>{{ new Date() | date:'medium' }}</span>
+          ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:103:18:
+      103 │             <span>{{ new Date() | date:'medium' }}</span>
+          ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'new' does not exist on type 'PostEditorComponent'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:103:21:
+      103 │             <span>{{ new Date() | date:'medium' }}</span>
+          ╵                      ~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:106:49:
+      106 │ ...s="preview-body" [innerHTML]="post.content | slice:0:1000"></div>
+          ╵                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:106:49:
+      106 │ ...s="preview-body" [innerHTML]="post.content | slice:0:1000"></div>
+          ╵                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:108:37:
+      108 │ ...lass="preview-media" *ngIf="post.media && post.media.length > 0">
+          ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:108:37:
+      108 │ ...lass="preview-media" *ngIf="post.media && post.media.length > 0">
+          ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:109:17:
+      109 │             <div *ngFor="let media of post.media" class="preview-...
+          ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:109:17:
+      109 │             <div *ngFor="let media of post.media" class="preview-...
+          ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:110:19:
+      110 │               <img *ngIf="media.type === 'image'" [src]="media.ur...
+          ╵                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:110:19:
+      110 │               <img *ngIf="media.type === 'image'" [src]="media.ur...
+          ╵                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:110:57:
+      110 │ ..."media.type === 'image'" [src]="media.url" [alt]="media.caption">
+          ╵                                    ~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:110:57:
+      110 │ ..."media.type === 'image'" [src]="media.url" [alt]="media.caption">
+          ╵                                    ~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:110:75:
+      110 │ ..."media.type === 'image'" [src]="media.url" [alt]="media.caption">
+          ╵                                                      ~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:110:75:
+      110 │ ..."media.type === 'image'" [src]="media.url" [alt]="media.caption">
+          ╵                                                      ~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:111:21:
+      111 │ ...         <video *ngIf="media.type === 'video'" [src]="media.ur...
+          ╵                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:111:21:
+      111 │ ...         <video *ngIf="media.type === 'video'" [src]="media.ur...
+          ╵                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:111:59:
+      111 │ ...ngIf="media.type === 'video'" [src]="media.url" controls></video>
+          ╵                                         ~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:111:59:
+      111 │ ...ngIf="media.type === 'video'" [src]="media.url" controls></video>
+          ╵                                         ~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:112:17:
+      112 │               <p *ngIf="media.caption" class="media-caption">{{ m...
+          ╵                  ~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:112:17:
+      112 │               <p *ngIf="media.caption" class="media-caption">{{ m...
+          ╵                  ~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:112:61:
+      112 │ ...gIf="media.caption" class="media-caption">{{ media.caption }}</p>
+          ╵                                              ~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:112:61:
+      112 │ ...gIf="media.caption" class="media-caption">{{ media.caption }}</p>
+          ╵                                              ~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:127:33:
+      127 │             <select [(ngModel)]="post.status" class="form-control">
+          ╵                                  ~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:127:33:
+      127 │             <select [(ngModel)]="post.status" class="form-control">
+          ╵                                  ~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:127:33:
+      127 │             <select [(ngModel)]="post.status" class="form-control">
+          ╵                                  ~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:127:33:
+      127 │             <select [(ngModel)]="post.status" class="form-control">
+          ╵                                  ~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:129:38:
+      129 │ ... <option value="pending" *ngIf="!isAdmin">Pending Review</option>
+          ╵                             ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:129:38:
+      129 │ ... <option value="pending" *ngIf="!isAdmin">Pending Review</option>
+          ╵                             ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:130:39:
+      130 │ ...      <option value="approved" *ngIf="isAdmin">Published</option>
+          ╵                                   ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:130:39:
+      130 │ ...      <option value="approved" *ngIf="isAdmin">Published</option>
+          ╵                                   ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:131:39:
+      131 │ ...       <option value="rejected" *ngIf="isAdmin">Rejected</option>
+          ╵                                    ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:131:39:
+      131 │ ...       <option value="rejected" *ngIf="isAdmin">Rejected</option>
+          ╵                                    ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:145:41:
+      145 │ ...<button type="button" (click)="cancel()" class="btn btn-outline">
+          ╵                                   ~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:145:41:
+      145 │ ...<button type="button" (click)="cancel()" class="btn btn-outline">
+          ╵                                   ~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:150:21:
+      150 │             (click)="deletePost()"
+          ╵                      ~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:150:21:
+      150 │             (click)="deletePost()"
+          ╵                      ~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:151:12:
+      151 │             *ngIf="mode === 'edit'"
+          ╵             ~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:151:12:
+      151 │             *ngIf="mode === 'edit'"
+          ╵             ~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:161:29:
+      161 │         <select [(ngModel)]="selectedCategory" class="form-control">
+          ╵                              ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:161:29:
+      161 │         <select [(ngModel)]="selectedCategory" class="form-control">
+          ╵                              ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:161:29:
+      161 │         <select [(ngModel)]="selectedCategory" class="form-control">
+          ╵                              ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:161:29:
+      161 │         <select [(ngModel)]="selectedCategory" class="form-control">
+          ╵                              ~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:163:18:
+      163 │ ...      <option *ngFor="let category of categories" [value]="cat...
+          ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:163:18:
+      163 │ ...      <option *ngFor="let category of categories" [value]="cat...
+          ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:163:63:
+      163 │ ...option *ngFor="let category of categories" [value]="category.id">
+          ╵                                                        ~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:163:63:
+      163 │ ...option *ngFor="let category of categories" [value]="category.id">
+          ╵                                                        ~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:164:12:
+      164 │             {{ category.name }}
+          ╵             ~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:164:12:
+      164 │             {{ category.name }}
+          ╵             ~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:173:23:
+      173 │           [(ngModel)]="tagsString"
+          ╵                        ~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:173:23:
+      173 │           [(ngModel)]="tagsString"
+          ╵                        ~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:173:23:
+      173 │           [(ngModel)]="tagsString"
+          ╵                        ~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:173:23:
+      173 │           [(ngModel)]="tagsString"
+          ╵                        ~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:187:58:
+      187 │ ...accept="image/*" (change)="onFileSelect($event, 'image')" hidden>
+          ╵                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:187:58:
+      187 │ ...accept="image/*" (change)="onFileSelect($event, 'image')" hidden>
+          ╵                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:195:31:
+      195 │   <div class="loading-overlay" *ngIf="isLoading">
+          ╵                                ~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:195:31:
+      195 │   <div class="loading-overlay" *ngIf="isLoading">
+          ╵                                ~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:198:9:
+      198 │       <p>{{ mode === 'edit' ? 'Updating' : 'Saving' }} post...</p>
+          ╵          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:198:9:
+      198 │       <p>{{ mode === 'edit' ? 'Updating' : 'Saving' }} post...</p>
+          ╵          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token 'Date' at column 6 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:203:27:
+      203 │ <div class="access-denied" *ngIf="!currentUser">
+          ╵                            ~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Parser Error: Unexpected token | at column 13 in [{{ new Date() | date:'medium' }}] in /home/runner/workspace/src/app/components/post-editor/post-editor.component.html@102:18 [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:203:27:
+      203 │ <div class="access-denied" *ngIf="!currentUser">
+          ╵                            ~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:15:15:
+      15 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type '"draft"' is not assignable to type '"approved" | "pending" | "rejected" | undefined'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:32:4:
+      32 │     status: 'draft'
+         ╵     ~~~~~~
+
+  The expected type comes from property 'status' which is declared here on type 'Partial<DogPost>'
+
+    src/app/models/dog.model.ts:49:2:
+      49 │   status: 'pending' | 'approved' | 'rejected';
+         ╵   ~~~~~~
+
+
+✘ [ERROR] TS18047: 'post' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:78:24:
+      78 │       this.tagsString = post.tags?.join(', ') || '';
+         ╵                         ~~~~
+
+
+✘ [ERROR] TS18047: 'post' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:79:30:
+      79 │       this.selectedCategory = post.category || '';
+         ╵                               ~~~~
+
+
+✘ [ERROR] TS2353: Object literal may only specify known properties, and 'filename' does not exist in type 'MediaItem'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:98:12:
+      98 │             filename: file.name
+         ╵             ~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type '"draft"' is not assignable to type '"approved" | "pending" | "rejected" | undefined'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:170:4:
+      170 │     this.post.status = 'draft';
+          ╵     ~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'updatePost' does not exist on type 'DogService'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:200:24:
+      200 │       ? this.dogService.updatePost(this.postId, postData)
+          ╵                         ~~~~~~~~~~
+
+
+✘ [ERROR] TS7006: Parameter 'error' implicitly has an 'any' type. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:209:6:
+      209 │       error => {
+          ╵       ~~~~~
+

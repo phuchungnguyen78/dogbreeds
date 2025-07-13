@@ -7,11 +7,19 @@ export interface User {
   avatar?: string;
   dateJoined: Date;
   role: 'user' | 'admin';
+  createdAt?: Date;
+  bio?: string;
+  location?: string;
+  joinDate?: Date;
+  postsCount?: number;
+  followersCount?: number;
+  followingCount?: number;
 }
 
 export interface AuthResponse {
   user: User;
   token: string;
+  expiresIn?: number;
 }
 
 export interface LoginRequest {

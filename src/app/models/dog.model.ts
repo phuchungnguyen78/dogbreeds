@@ -26,6 +26,7 @@ export interface MediaItem {
   url: string;
   thumbnail?: string;
   caption?: string;
+  filename?: string;
 }
 
 export interface DogPost {
@@ -46,10 +47,22 @@ export interface DogPost {
   commentsCount: number;
   views: number;
   videoViews?: number;
-  status: 'pending' | 'approved' | 'rejected';
+  status: 'draft' | 'pending' | 'approved' | 'rejected';
   likedBy: string[];
   sharedBy: string[];
   shares: number;
+  // SEO and publishing fields
+  visibility?: 'public' | 'private' | 'unlisted';
+  scheduledDate?: Date;
+  metaDescription?: string;
+  focusKeyword?: string;
+  featuredImage?: string;
+  analytics?: {
+    views: number;
+    likes: number;
+    comments: number;
+    shares: number;
+  };
 }
 
 export enum DogCategory {

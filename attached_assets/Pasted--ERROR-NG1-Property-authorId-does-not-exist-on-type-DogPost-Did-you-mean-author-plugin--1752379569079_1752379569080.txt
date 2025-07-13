@@ -1,0 +1,365 @@
+✘ [ERROR] NG1: Property 'authorId' does not exist on type 'DogPost'. Did you mean 'author'? [plugin angular-compiler]
+
+    src/app/components/community/community.component.html:185:77:
+      185 │ ...ool-item author-profile" [routerLink]="['/user', post.authorId]">
+          ╵                                                          ~~~~~~~~
+
+  Error occurs in the template of component CommunityComponent.
+
+    src/app/components/community/community.component.ts:15:15:
+      15 │   templateUrl: './community.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Property 'authorId' does not exist on type 'DogPost'. Did you mean 'author'? [plugin angular-compiler]
+
+    src/app/components/community/community.component.html:196:71:
+      196 │ ...="currentUser?.id === post.authorId || currentUser?.role === '...
+          ╵                               ~~~~~~~~
+
+  Error occurs in the template of component CommunityComponent.
+
+    src/app/components/community/community.component.ts:15:15:
+      15 │   templateUrl: './community.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:49:66:
+      49 │ ...ormatText('heading', $event.target.value)" class="heading-select">
+         ╵                                       ~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'value' does not exist on type 'EventTarget'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:49:66:
+      49 │ ...ormatText('heading', $event.target.value)" class="heading-select">
+         ╵                                       ~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:79:76:
+      79 │ ...tText('color', $event.target.value)" class="color-picker" title...
+         ╵                                 ~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'value' does not exist on type 'EventTarget'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:79:76:
+      79 │ ...tText('color', $event.target.value)" class="color-picker" title...
+         ╵                                 ~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:80:81:
+      80 │ ...('background', $event.target.value)" class="color-picker" title...
+         ╵                                 ~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'value' does not exist on type 'EventTarget'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:80:81:
+      80 │ ...('background', $event.target.value)" class="color-picker" title...
+         ╵                                 ~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'visibility' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:271:38:
+      271 │ ...      <select [(ngModel)]="post.visibility" class="form-control">
+          ╵                                    ~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'visibility' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:271:38:
+      271 │ ...      <select [(ngModel)]="post.visibility" class="form-control">
+          ╵                                    ~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'scheduledDate' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:280:59:
+      280 │ ...ime-local" [(ngModel)]="post.scheduledDate" class="form-control">
+          ╵                                 ~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'scheduledDate' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:280:59:
+      280 │ ...ime-local" [(ngModel)]="post.scheduledDate" class="form-control">
+          ╵                                 ~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5: Argument of type 'Event' is not assignable to parameter of type 'KeyboardEvent'.
+  Type 'Event' is missing the following properties from type 'KeyboardEvent': altKey, charCode, code, ctrlKey, and 17 more. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:317:38:
+      317 │               (keydown.enter)="addTag($event)"
+          ╵                                       ~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'metaDescription' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:336:30:
+      336 │             [(ngModel)]="post.metaDescription"
+          ╵                               ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'metaDescription' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:336:30:
+      336 │             [(ngModel)]="post.metaDescription"
+          ╵                               ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'metaDescription' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:342:25:
+      342 │           <small>{{ post.metaDescription?.length || 0 }}/160 char...
+          ╵                          ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'focusKeyword' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:349:30:
+      349 │             [(ngModel)]="post.focusKeyword"
+          ╵                               ~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'focusKeyword' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:349:30:
+      349 │             [(ngModel)]="post.focusKeyword"
+          ╵                               ~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'featuredImage' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:359:52:
+      359 │           <div class="current-featured" *ngIf="post.featuredImage">
+          ╵                                                     ~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'featuredImage' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:360:29:
+      360 │ ...        <img [src]="post.featuredImage" alt="Featured image" c...
+          ╵                             ~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'featuredImage' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:363:49:
+      363 │           <label class="upload-btn" *ngIf="!post.featuredImage">
+          ╵                                                  ~~~~~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'analytics' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:371:62:
+      371 │ ...iv class="sidebar-box" *ngIf="mode === 'edit' && post.analytics">
+          ╵                                                          ~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'analytics' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:376:45:
+      376 │ ...  <span class="stat-value">{{ post.analytics.views || 0 }}</span>
+          ╵                                       ~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'analytics' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:380:45:
+      380 │ ...  <span class="stat-value">{{ post.analytics.likes || 0 }}</span>
+          ╵                                       ~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'analytics' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:384:45:
+      384 │ ...span class="stat-value">{{ post.analytics.comments || 0 }}</span>
+          ╵                                    ~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG9: Property 'analytics' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.html:388:45:
+      388 │ ... <span class="stat-value">{{ post.analytics.shares || 0 }}</span>
+          ╵                                      ~~~~~~~~~
+
+  Error occurs in the template of component PostEditorComponent.
+
+    src/app/components/post-editor/post-editor.component.ts:14:15:
+      14 │   templateUrl: './post-editor.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS1005: ',' expected. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:309:133:
+      309 │ ..., '′', '″', '‹', '›', '«', '»', '‚', '"', '"', '''...
+          ╵                         ~~~
+
+
+✘ [ERROR] TS1005: ',' expected. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:309:137:
+      309 │ ...′', '″', '‹', '›', '«', '»', '‚', '"', '"', ''', '...
+          ╵                         ~~
+
+
+✘ [ERROR] TS2339: Property 'featuredImage' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:407:18:
+      407 │         this.post.featuredImage = e.target?.result as string;
+          ╵                   ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'featuredImage' does not exist on type 'Partial<DogPost>'. [plugin angular-compiler]
+
+    src/app/components/post-editor/post-editor.component.ts:414:14:
+      414 │     this.post.featuredImage = undefined;
+          ╵               ~~~~~~~~~~~~~

@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "sources": [],
-  "sourcesContent": [],
-  "mappings": "",
+  "sources": ["src/app/app.component.css"],
+  "sourcesContent": ["\n:host {\n  font-family: \"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto,\n    Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\",\n    \"Segoe UI Symbol\";\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  display: block;\n  min-height: 100vh;\n}\n\n* {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  background-color: #f5f5f5;\n}\n\n.main-content {\n  min-height: calc(100vh - 200px);\n  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);\n}\n\n.footer {\n  background: #333;\n  color: white;\n  padding: 2rem 0;\n  text-align: center;\n  margin-top: 3rem;\n}\n\n.footer-content {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 2rem;\n}\n\n.footer p {\n  margin: 0;\n  font-size: 1rem;\n}\n\n@media (max-width: 768px) {\n  .footer {\n    padding: 1.5rem 0;\n  }\n  \n  .footer-content {\n    padding: 0 1rem;\n  }\n}\n"],
+  "mappings": ";AACA;AACE;AAAA,IAAa,OAAO;AAAA,IAAE,aAAa;AAAA,IAAE,kBAAkB;AAAA,IAAE,UAAU;AAAA,IAAE,MAAM;AAAA,IACzE,SAAS;AAAA,IAAE,KAAK;AAAA,IAAE,UAAU;AAAA,IAAE,mBAAmB;AAAA,IAAE,gBAAgB;AAAA,IACnE;AACF,cAAY;AACZ,0BAAwB;AACxB,2BAAyB;AACzB,WAAS;AACT,cAAY;AACd;AAEA;AACE,cAAY;AACd;AAEA;AACE,UAAQ;AACR,WAAS;AACT,oBAAkB;AACpB;AAEA,CAAC;AACC,cAAY,KAAK,MAAM,EAAE;AACzB;AAAA,IAAY;AAAA,MAAgB,MAAhB;AAAA,MAAwB,QAAQ,EAAhC;AAAA,MAAoC,QAAQ;AAC1D;AAEA,CAAC;AACC,cAAY;AACZ,SAAO;AACP,WAAS,KAAK;AACd,cAAY;AACZ,cAAY;AACd;AAEA,CAAC;AACC,aAAW;AACX,UAAQ,EAAE;AACV,WAAS,EAAE;AACb;AAEA,CAdC,OAcO;AACN,UAAQ;AACR,aAAW;AACb;AAEA,OAAO,CAAC,SAAS,EAAE;AACjB,GApBD;AAqBG,aAAS,OAAO;AAClB;AAEA,GAhBD;AAiBG,aAAS,EAAE;AACb;AACF;",
   "names": []
 }

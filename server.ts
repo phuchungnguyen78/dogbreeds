@@ -7,12 +7,16 @@ import bootstrap from './src/main.server';
 
 // Environment configuration
 const isDevelopment = process.env['NODE_ENV'] !== 'production';
-const environment = isDevelopment 
-  ? await import('./src/environments/environment').then(m => m.environment)
-  : await import('./src/environments/environment.prod').then(m => m.environment);
+
+async function getEnvironment() {
+  return isDevelopment 
+    ? await import('./src/environments/environment').then(m => m.environment)
+    : await import('./src/environments/environment.prod').then(m => m.environment);
+}
 
 // The Express app is exported so that it can be used by serverless Functions.
-export function app(): express.Express {
+export async function app(): Promise<express.Express> {
+  const environment = await getEnvironment();
   const server = express();
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -81,11 +85,11 @@ export function app(): express.Express {
   return server;
 }
 
-function run(): void {
+async function run(): Promise<void> {
   const port = process.env['PORT'] || 4000;
 
   // Start up the Node server
-  const server = app();
+  const server = await app();
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });

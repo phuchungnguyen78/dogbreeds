@@ -1,0 +1,59 @@
+ [ERROR] NG5002: Incomplete block "doghub". If you meant to write the @ character, you should use the "&#64;" HTML entity instead. [plugin angular-compiler]
+
+    src/app/components/auth/auth-modal.component.html:18:27:
+      18 │                 <span>admin@doghub.com / admin123</span>
+         ╵                            ~~~~~~~
+
+  Error occurs in the template of component AuthModalComponent.
+
+    src/app/components/auth/auth-modal.component.ts:12:15:
+      12 │   templateUrl: './auth-modal.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG5002: Incomplete block "example". If you meant to write the @ character, you should use the "&#64;" HTML entity instead. [plugin angular-compiler]
+
+    src/app/components/auth/auth-modal.component.html:25:26:
+      25 │                 <span>test@example.com / password</span>
+         ╵                           ~~~~~~~~
+
+  Error occurs in the template of component AuthModalComponent.
+
+    src/app/components/auth/auth-modal.component.ts:12:15:
+      12 │   templateUrl: './auth-modal.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2353: Object literal may only specify known properties, and 'createdAt' does not exist in type 'User'. [plugin angular-compiler]
+
+    src/app/services/auth.service.ts:20:4:
+      20 │     createdAt: new Date(),
+         ╵     ~~~~~~~~~
+
+
+✘ [ERROR] TS2740: Type 'Promise<Observable<AuthResponse> | Observable<never>>' is missing the following properties from type 'Observable<AuthResponse>': source, operator, lift, subscribe, and 3 more. [plugin angular-compiler]
+
+    src/app/services/auth.service.ts:68:4:
+      68 │     return new Promise<AuthResponse>((resolve, reject) => {
+         ╵     ~~~~~~
+
+
+✘ [ERROR] TS2353: Object literal may only specify known properties, and 'expiresIn' does not exist in type 'AuthResponse'. [plugin angular-compiler]
+
+    src/app/services/auth.service.ts:75:12:
+      75 │             expiresIn: 3600
+         ╵             ~~~~~~~~~
+
+
+✘ [ERROR] TS2353: Object literal may only specify known properties, and 'createdAt' does not exist in type 'User'. [plugin angular-compiler]
+
+    src/app/services/auth.service.ts:91:12:
+      91 │             createdAt: new Date(),
+         ╵             ~~~~~~~~~
+
+
+✘ [ERROR] TS2353: Object literal may only specify known properties, and 'expiresIn' does not exist in type 'AuthResponse'. [plugin angular-compiler]
+
+    src/app/services/auth.service.ts:103:12:
+      103 │             expiresIn: 3600
+          ╵             ~~~~~~~~~

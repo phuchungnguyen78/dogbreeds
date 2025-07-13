@@ -21,6 +21,13 @@ export class CommunityComponent implements OnInit {
   filteredPosts: DogPost[] = [];
   selectedStatus: string = 'approved';
   showCreatePost = false;
+  currentSlides: { [postId: string]: number } = {};
+  expandedPosts: { [postId: string]: boolean } = {};
+  showComments: { [postId: string]: boolean } = {};
+  showMoreOptions: { [postId: string]: boolean } = {};
+  showTools = false;
+  currentPostIndex = 0;
+  scrollTimeout: any;
 
   newPost = {
     title: '',
@@ -243,5 +250,93 @@ export class CommunityComponent implements OnInit {
 
   getMediaIcon(type: string): string {
     return type === 'video' ? '🎥' : '📷';
+  }
+
+  // TikTok-style functionality
+  nextSlide(postId: string, totalSlides: number) {
+    if (!this.currentSlides[postId]) this.currentSlides[postId] = 0;
+    if (this.currentSlides[postId] < totalSlides - 1) {
+      this.currentSlides[postId]++;
+    }
+  }
+
+  previousSlide(postId: string) {
+    if (!this.currentSlides[postId]) this.currentSlides[postId] = 0;
+    if (this.currentSlides[postId] > 0) {
+      this.currentSlides[postId]--;
+    }
+  }
+
+  toggleExpanded(postId: string) {
+    this.expandedPosts[postId] = !this.expandedPosts[postId];
+  }
+
+  toggleComments(postId: string) {
+    this.showComments[postId] = !this.showComments[postId];
+  }
+
+  closeCommentsOverlay(event: Event, postId: string) {
+    if (event.target === event.currentTarget) {
+      this.showComments[postId] = false;
+    }
+  }
+
+  toggleMoreOptions(postId: string) {
+    this.showMoreOptions[postId] = !this.showMoreOptions[postId];
+  }
+
+  openLogin() {
+    // This will be handled by the header component
+    window.dispatchEvent(new CustomEvent('openAuthModal', { detail: 'login' }));
+  }
+
+  onScroll(event: Event) {
+    const container = event.target as HTMLElement;
+    const scrollTop = container.scrollTop;
+    const containerHeight = container.clientHeight;
+    
+    // Calculate which post is currently in view
+    const postHeight = containerHeight; // Assuming full height posts
+    this.currentPostIndex = Math.round(scrollTop / postHeight);
+    
+    // Show tools when scrolling stops
+    this.showTools = true;
+    
+    // Hide tools while scrolling
+    clearTimeout(this.scrollTimeout);
+    this.scrollTimeout = setTimeout(() => {
+      this.showTools = true;
+    }, 150);
+  }
+
+  copyPostLink(post: DogPost) {
+    const url = window.location.origin + '/post/' + post.id;
+    navigator.clipboard.writeText(url).then(() => {
+      alert('Link copied to clipboard!');
+    });
+    this.showMoreOptions[post.id] = false;
+  }
+
+  reportPost(post: DogPost) {
+    if (confirm('Report this post for inappropriate content?')) {
+      // In a real app, send to moderation system
+      alert('Post reported. Thank you for keeping our community safe.');
+    }
+    this.showMoreOptions[post.id] = false;
+  }
+
+  editPost(post: DogPost) {
+    window.open(`/edit-post/${post.id}`, '_blank');
+    this.showMoreOptions[post.id] = false;
+  }
+
+  deletePost(post: DogPost) {
+    if (confirm('Are you sure you want to delete this post?')) {
+      this.dogService.deletePost(post.id).subscribe(() => {
+        this.filteredPosts = this.filteredPosts.filter(p => p.id !== post.id);
+        alert('Post deleted successfully');
+      });
+    }
+    this.showMoreOptions[post.id] = false;
   }
 }
